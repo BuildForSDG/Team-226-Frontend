@@ -5,3 +5,5 @@
  */
 
 // You can delete this file if you're not using it
+// eslint-disable-next-line import/no-unresolved
+import 'bootstrap/dist/css/bootstrap.min.css';
