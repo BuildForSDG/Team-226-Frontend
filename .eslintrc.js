@@ -5,8 +5,7 @@ module.exports = {
     node: true,
     jest: true
   },
-  parser: 'babel-eslint',
-  extends: ['airbnb-base'],
+  extends: ['airbnb-base', 'plugin:react/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
