@@ -1,0 +1,24 @@
+.storybookContainer {
+  min-height: 200px;
+  margin: 50px 0;
+  padding: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.sbColumn {
+  flex: 0 0 50%;
+  height: 100%;
+}
+
+.sbDemonstrate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}

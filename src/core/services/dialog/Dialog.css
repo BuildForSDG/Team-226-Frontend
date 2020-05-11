@@ -1,0 +1,125 @@
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dialog-component {
+  background: #fff;
+  box-shadow: 0 0 3px 3px rgba(0,0,0,.1);
+  border-radius: 3px;
+  max-width: 95vw;
+  max-height: 95vh;
+  overflow: auto;
+}
+
+.dialog-component__header {
+  position: relative;
+  padding: 10px 30px 5px 15px;
+  font-weight: bold;
+}
+
+.dialog-component__header--close {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.dialog-component__body {
+  padding: 15px;
+}
+
+.dialog-component__footer {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog-component__footer button {
+  background: #efefef;
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid #dedcdc;
+  border-radius: 2px;
+  outline: none;
+  min-width: 70px;
+  font-size: 14px;
+}
+
+.dialog-component__footer button + button {
+  margin-left: 5px;
+}
+
+.dialog-component__footer button.main {
+  background: rgba(46, 136, 255, 0.685);
+  color: #fff;
+  border-color: rgba(46, 137, 255, 0.76);
+}
+
+.loader-dialog {
+  color: #fff;
+  font-size: 35px;
+  text-align: center;
+}
+
+.loader-dialog img {
+  height: 100px;
+  width: 300px;
+  display: block;
+  margin-bottom: -40px;
+}
+
+.notification-dialog {
+  max-width: 400px;
+}
+
+.notification-dialog h3{
+  margin: 0;
+}
+
+.notification-dialog .dialog-component {
+  border-top: 3px solid rgba(46, 136, 255, 0.685);
+}
+
+.notification-dialog.success .dialog-component {
+  border-top-color: rgb(50, 226, 173);
+}
+
+.notification-dialog.warning .dialog-component {
+  border-top-color: orange;
+}
+
+.notification-dialog.error .dialog-component {
+  border-top-color: orangered;
+}
+
+.notification-dialog.error .dialog-component__footer button.main {
+  background: orangered;
+  border-color: orangered;
+}
+
+.notification-dialog.success .dialog-component__footer button.main {
+  background: rgb(50, 226, 173);
+  border-color: rgb(50, 226, 173);
+}
+
+.notification-dialog.warning .dialog-component__footer button.main {
+  background: orange;
+  border-color: orange;
+}
+
+
+
+
+
+
