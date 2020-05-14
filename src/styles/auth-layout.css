@@ -1,0 +1,12 @@
+.auth-container {
+    background: rgb(136, 188, 176);
+    background: linear-gradient(49deg, #acdbd3 0%, #216353 100%);
+    min-height: 100vh;
+    padding: 12% 20%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .auth-container {
+        padding: 12% 7%;
+    }
+}

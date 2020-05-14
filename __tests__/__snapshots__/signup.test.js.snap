@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup renders correctly 1`] = `
+<div
+  className="auth-container"
+>
+  <main>
+    <div
+      className="signup-section row"
+    >
+      <div
+        className="signup-info col-md-6 col-sm-5 col-12"
+      >
+        <a
+          aria-current="page"
+          className=""
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={Object {}}
+        >
+          SITE NAME
+        </a>
+        <div
+          className="info-elements"
+        >
+          <p
+            className="sub-title"
+          >
+            ALREADY HAVE AN ACCOUNT ?
+          </p>
+          <p
+            className="medium-text"
+          >
+            Marshmallow cake chocolate bar biscuit chocolate cake dragée. Tootsie roll topping oat cake
+          </p>
+          <button
+            className="default-btn btn btn-primary btn-sm"
+            disabled={false}
+            type="button"
+          >
+            LOGIN
+          </button>
+        </div>
+      </div>
+      <div
+        className="signup-form col-md-6 col-sm-7 col-12"
+      >
+        <p
+          className="sub-title text-center"
+        >
+          Create an account
+        </p>
+        <p
+          className="medium-text text-center"
+        >
+          Marshmallow cake chocolate bar biscuit chocolate cake dragée. Tootsie roll topping oat cake
+        </p>
+        <form
+          className=""
+        >
+          <div
+            className="form-row"
+          >
+            <div
+              className="form-group col"
+            >
+              <label
+                className="form-label"
+                htmlFor="formGridEmail"
+              >
+                Firstname
+              </label>
+              <input
+                className="form-control form-control-sm"
+                id="formGridEmail"
+                type="text"
+              />
+            </div>
+            <div
+              className="form-group col"
+            >
+              <label
+                className="form-label"
+                htmlFor="formGridPassword"
+              >
+                Lastname
+              </label>
+              <input
+                className="form-control form-control-sm"
+                id="formGridPassword"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="form-label"
+              htmlFor="formGridAddress1"
+            >
+              Email
+            </label>
+            <input
+              className="form-control form-control-sm"
+              id="formGridAddress1"
+              type="email"
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="form-label"
+              htmlFor="formGridAddress1"
+            >
+              Password
+            </label>
+            <input
+              className="form-control form-control-sm"
+              id="formGridAddress1"
+              type="password"
+            />
+          </div>
+          <div
+            className="form-row"
+          >
+            <div
+              className="form-group col"
+              id="formGridCheckbox"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  I agree to terms and Conditions
+                </label>
+              </div>
+            </div>
+            <div
+              className="form-group col"
+              id="pricacyPolicy"
+            >
+              <a
+                className="medium-text privacy-link"
+                href="/page-2"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Privacy Policies
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+`;
