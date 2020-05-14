@@ -49,10 +49,10 @@ const Signup = () => (
             <Form.Control data-testid="passwordInput" type="password" size="sm" />
           </Form.Group>
           <Form.Row>
-            <Form.Group as={Col}>
+            <Form.Group xs={8} as={Col}>
               <Form.Check type="checkbox" data-testid="termsConditions" label="I agree to terms and Conditions" />
             </Form.Group>
-            <Form.Group as={Col}>
+            <Form.Group xs={4} as={Col}>
               <Link to="/page-2" data-testid="pricacyPolicy" className="medium-text privacy-link">Privacy Policies</Link>
             </Form.Group>
           </Form.Row>
