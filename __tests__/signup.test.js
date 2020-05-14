@@ -1,21 +1,45 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import Signup from '../src/pages/signup.jsx';
 
+afterEach(cleanup);
+
 describe('Signup', () => {
-  it('renders correctly', () => {
-    const tree = renderer
-      .create(<Signup title="Signup" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   test('renders form componenets', () => {
-    const signup = renderer.create(<Signup />);
-    const signInstance = signup.getInstance();
+    const { getByTestId } = render(<Signup />);
 
-    const inputs = signInstance.findAll('input');
-    expect(inputs.length).toBe(4);
+    // Test firstname
+    const firstname = getByTestId('firstnameInput');
+    expect(firstname).toBeInTheDocument();
+
+    // Test lastname
+    const lastname = getByTestId('lastnameInput');
+    expect(lastname).toBeInTheDocument();
+
+    // Test emial
+    const email = getByTestId('emailInput');
+    expect(email).toBeInTheDocument();
+
+    // Test email
+    const password = getByTestId('passwordInput');
+    expect(password).toBeInTheDocument();
+
+    // Test terms and condition
+    const terms = getByTestId('termsConditions');
+    expect(terms).toBeInTheDocument();
+
+    // Test privacy policy
+    const privacy = getByTestId('pricacyPolicy');
+    expect(privacy).toBeInTheDocument();
+
+    // Test login button
+    const loginBtn = getByTestId('login');
+    expect(loginBtn).toBeInTheDocument();
+
+    // Test login button
+    const signupBtn = getByTestId('signup');
+    expect(signupBtn).toBeInTheDocument();
   });
 });

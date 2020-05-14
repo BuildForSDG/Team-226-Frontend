@@ -6,12 +6,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 import AuthLayout from '../components/auth-layout';
-import SEO from '../components/seo';
 import '../styles/signup.css';
 
 const Signup = () => (
   <AuthLayout>
-    {/* <SEO title="Signup" /> */}
     <Row className="signup-section">
       <Col className="signup-info" md={6} sm={5} xs={12}>
         <Link to="/" >SITE NAME</Link>
@@ -21,7 +19,7 @@ const Signup = () => (
             Marshmallow cake chocolate bar biscuit chocolate cake dragée.
             Tootsie roll topping oat cake
         </p>
-          <Button className="default-btn" size="sm">LOGIN</Button>
+          <Button className="default-btn" data-testid="login" size="sm">LOGIN</Button>
         </div>
       </Col>
       <Col className="signup-form" md={6} sm={7} xs={12}>
@@ -34,30 +32,31 @@ const Signup = () => (
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Firstname</Form.Label>
-              <Form.Control type="text" size="sm" />
+              <Form.Control data-testid="firstnameInput" type="text" size="sm" />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPassword">
               <Form.Label>Lastname</Form.Label>
-              <Form.Control type="text" size="sm" />
+              <Form.Control data-testid="lastnameInput" type="text" size="sm" />
             </Form.Group>
           </Form.Row>
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" size="sm" />
+            <Form.Control data-testid="emailInput" type="email" size="sm" />
           </Form.Group>
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" size="sm" />
+            <Form.Control data-testid="passwordInput" type="password" size="sm" />
           </Form.Group>
           <Form.Row>
-            <Form.Group as={Col} id="formGridCheckbox">
-              <Form.Check type="checkbox" label="I agree to terms and Conditions" />
+            <Form.Group as={Col}>
+              <Form.Check type="checkbox" data-testid="termsConditions" label="I agree to terms and Conditions" />
             </Form.Group>
-            <Form.Group as={Col} id="pricacyPolicy">
-              <Link to="/page-2" className="medium-text privacy-link">Privacy Policies</Link>
+            <Form.Group as={Col}>
+              <Link to="/page-2" data-testid="pricacyPolicy" className="medium-text privacy-link">Privacy Policies</Link>
             </Form.Group>
           </Form.Row>
+          <Button className="default-btn signup-btn" type="submit" data-testid="signup" size="sm">SIGNUP</Button>
         </Form>
       </Col>
     </Row>
