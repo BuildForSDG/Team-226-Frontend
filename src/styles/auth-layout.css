@@ -1,0 +1,6 @@
+.auth-container {
+    background: linear-gradient(49deg, #acdbd3 0%, #216353 100%);
+    min-height: 100vh;
+    height: auto !important;
+    overflow: hidden;
+}

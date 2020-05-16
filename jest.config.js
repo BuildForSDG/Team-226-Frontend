@@ -3,7 +3,7 @@ module.exports = {
   rootDir: '__tests__',
   testRegex: ['.spec.js$', '.test.js$'],
   coverageDirectory: './coverage',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.jsx?$': '<rootDir>/jest-preprocess.js'
   },
@@ -16,5 +16,6 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ''
   },
-  setupFiles: ['<rootDir>/loadershim.js']
+  setupFiles: ['<rootDir>/loadershim.js'],
+  setupFilesAfterEnv: ['<rootDir>/setup-test-env.js']
 };

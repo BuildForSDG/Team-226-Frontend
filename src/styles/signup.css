@@ -1,0 +1,113 @@
+/* containers */
+
+.signup-info {
+  background-color: #216353;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 3% 5%;
+}
+
+.signup-section {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  width: 70%;
+	margin: 11% auto;
+}
+
+.signup-form {
+  background-color: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 3% 5%;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #216353;
+  border-color: 1px solid transparent;
+}
+
+input:active, input:active, input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* left container */
+
+.signup-info a, .signup-info a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.info-elements {
+  margin: 35% auto;
+  width: 70%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.sub-title {
+  font-size: 15px;
+}
+
+.medium-text {
+  font-size: 13px;
+}
+
+.default-btn {
+  background-color: #216353;
+  border: 1px solid #fff;
+  font-size: 10px;
+  width: 100px;
+}
+
+.default-btn:hover, .default-btn:active {
+  background-color: #fff;
+  border: 1px solid #216353;
+  color: #216353;
+}
+
+/* right container */
+label {
+  font-size: 14px;
+}
+
+.signup-form .form-check label {
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.form-check-input {
+  margin-top: 0.4rem;
+}
+.privacy-link {
+  text-align: right;
+  float: right;
+  margin-top: 7px;
+  font-size: 10px;
+  color: inherit;
+}
+
+.privacy-link:hover {
+  text-decoration: none;
+}
+
+.signup-btn {
+  margin: 0 auto;
+  display: block;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .signup-section, .signup-form, .signup-info {
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .signup-section {
+    width: 90%;
+  }
+}
