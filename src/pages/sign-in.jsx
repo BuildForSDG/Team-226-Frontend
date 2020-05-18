@@ -29,10 +29,10 @@ const Signin = () => (
           </Form.Group>
           <Form.Row>
             <Form.Group md={{ span: 3, offset: 9 }} as={Col}>
-              <Link to="/page-2" data-testid="pricacyPolicy" className="medium-text privacy-link">Forget Password</Link>
+              <Link to="/page-2" data-testid="forgetPassword" className="medium-text privacy-link">Forget Password</Link>
             </Form.Group>
           </Form.Row>
-          <Button className="default-btn signup-btn" type="submit" data-testid="signup" size="sm">LOGIN</Button>
+          <Button className="default-btn signup-btn" type="submit" data-testid="login" size="sm">LOGIN</Button>
         </Form>
       </Col>
       <Col className="signin-info" md={6} sm={5} xs={12}>
@@ -43,7 +43,7 @@ const Signin = () => (
             Marshmallow cake chocolate bar biscuit chocolate cake dragée.
             Tootsie roll topping oat cake
         </p>
-          <Button className="default-btn" data-testid="login" size="sm"><Link to="/signup" >SIGNUP</Link></Button>
+          <Button className="default-btn" data-testid="signup" size="sm"><Link to="/signup" >SIGNUP</Link></Button>
         </div>
       </Col>
     </Row>
