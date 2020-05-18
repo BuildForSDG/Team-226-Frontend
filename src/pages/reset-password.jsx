@@ -11,8 +11,8 @@ const stepOne = (handleNext) => (
   <div className="reset-component">
     <p className="sub-title text-center">Reset Password</p>
     <p className="text-center medium-text reset-desctiption">
-      Marshmallow cake chocolate bar biscuit chocolate cake dragée.
-      Tootsie roll topping oat cake
+      Enter your email below to start the process.
+      The email should be associated with an existing account.
     </p>
     <Form.Group controlId="formGridAddress1">
       <Form.Label>Email</Form.Label>
@@ -31,8 +31,7 @@ const stepTwo = () => (
   <div className="reset-component">
     <p className="sub-title text-center">Reset Password</p>
     <p className="text-center medium-text reset-desctiption">
-      Marshmallow cake chocolate bar biscuit chocolate cake dragée.
-      Tootsie roll topping oat cake
+      Verify your email in order to continue with the reset password process.
     </p>
   </div>
 );
