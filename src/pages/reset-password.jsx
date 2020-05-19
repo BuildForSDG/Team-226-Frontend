@@ -6,10 +6,11 @@ import Form from 'react-bootstrap/Form';
 
 import AuthLayout from '../components/auth-layout';
 import '../styles/reset-password.css';
+import doneImg from '../images/good.png';
 
 const stepOne = (handleNext) => (
   <div className="reset-component">
-    <p className="sub-title text-center">Reset Password</p>
+    <p className="sub-title text-center"><strong>Reset Password</strong></p>
     <p className="text-center medium-text reset-desctiption">
       Enter your email below to start the process.
       The email should be associated with an existing account.
@@ -29,10 +30,13 @@ const stepOne = (handleNext) => (
 
 const stepTwo = () => (
   <div className="reset-component">
-    <p className="sub-title text-center">Reset Password</p>
+    <p className="sub-title text-center"><strong>Reset Password</strong></p>
     <p className="text-center medium-text reset-desctiption">
       Verify your email in order to continue with the reset password process.
     </p>
+    <div>
+      <img alt="completed" className="completed-img" src={doneImg} />
+    </div>
   </div>
 );
 

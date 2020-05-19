@@ -1,6 +1,6 @@
 module.exports = {
   moduleFileExtensions: ['js', 'json'],
-  rootDir: '__tests__',
+  roots: ['<rootDir>'],
   testRegex: ['.spec.js$', '.test.js$'],
   coverageDirectory: './coverage',
   testEnvironment: 'jsdom',

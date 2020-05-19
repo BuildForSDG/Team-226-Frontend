@@ -10,9 +10,9 @@ function ConfirmPassword() {
     <AuthLayout>
       <div className="reset-password">
         <div className="reset-component">
-          <p className="sub-title text-center">Confirm Password</p>
+          <p className="sub-title text-center"><strong>Confirm Password</strong></p>
           <p className="text-center medium-text reset-desctiption">
-            Enter and confirm your new password for the account test@test.com
+            Enter and confirm your new password for the account <strong><i>test@test.com</i></strong>
           </p>
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Password</Form.Label>
