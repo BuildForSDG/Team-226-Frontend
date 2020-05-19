@@ -60,7 +60,7 @@ input:active, input:active, input:focus {
   background-color: #216353;
   border: 1px solid #fff;
   font-size: 10px;
-  width: 100px;
+  min-width: 100px;
 }
 
 .default-btn:hover, .default-btn:active {
