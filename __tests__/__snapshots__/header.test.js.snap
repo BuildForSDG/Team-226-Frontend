@@ -1,42 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<header
-  style={
-    Object {
-      "background": "rebeccapurple",
-      "marginBottom": "1.45rem",
-    }
-  }
+<nav
+  className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top"
 >
-  <div
-    style={
-      Object {
-        "margin": "0 auto",
-        "maxWidth": 960,
-        "padding": "1.45rem 1.0875rem",
-      }
-    }
+  <a
+    className="navbar-brand"
+    href="/"
   >
-    <h1
-      style={
-        Object {
-          "margin": 0,
-        }
-      }
+    
+  </a>
+  <button
+    aria-controls="responsive-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="justify-content-end navbar-collapse collapse"
+    id="responsive-navbar-nav"
+  >
+    <div
+      className="navbar-nav"
+      onKeyDown={[Function]}
     >
       <a
-        href="/"
-        style={
-          Object {
-            "color": "white",
-            "textDecoration": "none",
-          }
-        }
+        className="nav-link"
+        data-rb-event-key="/sign-in"
+        href="/sign-in"
+        onClick={[Function]}
+        onKeyDown={[Function]}
       >
-        
+        Sign In
       </a>
-    </h1>
+      <a
+        className="nav-link"
+        data-rb-event-key="2"
+        href="/signup"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Sign Up
+      </a>
+    </div>
   </div>
-</header>
+</nav>
 `;
