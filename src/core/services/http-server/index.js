@@ -1,10 +1,9 @@
 import HttpClient from '../../http-client';
-
-export const SERVER_API_URL = 'localhost:8000';
+import config from '../../config';
 
 class HttpServer extends HttpClient {
   constructor() {
-    super(SERVER_API_URL);
+    super(`${config.API_URL}/api/`);
   }
 }
 

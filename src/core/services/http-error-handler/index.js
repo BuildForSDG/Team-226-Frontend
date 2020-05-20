@@ -65,13 +65,13 @@ const defaultErrorHandlingMap = {
 };
 
 function handle(object) {
-  return NotificationService.showError(object);
+  return NotificationService.showError({ rejectLabel: 'close', ...object });
 }
 
 export default function handlError(httpError, options) {
   const errorStatus = httpError.status;
   const handler = options[errorStatus]
-    || defaultErrorHandlingMap[errorStatus]
+    || (() => handle(defaultErrorHandlingMap[errorStatus]))
     || defaultErrorHandlingMap.default;
-  return handle(handler(errorStatus, httpError)) || Promise.reject(httpError);
+  return handler(errorStatus, httpError) || Promise.reject(httpError);
 }
