@@ -12,7 +12,8 @@ function ConfirmPassword() {
         <div className="reset-component">
           <p className="sub-title text-center"><strong>Confirm Password</strong></p>
           <p className="text-center medium-text reset-desctiption">
-            Enter and confirm your new password for the account <strong><i>test@test.com</i></strong>
+            Enter and confirm your new password for the account
+            <strong><i>test@test.com</i></strong>
           </p>
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Password</Form.Label>

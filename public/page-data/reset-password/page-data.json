@@ -1,5 +1,7 @@
 {
   "componentChunkName": "component---src-pages-reset-password-jsx",
   "path": "/reset-password/",
-  "result": "{'pageContext':{}}"
+  "result": {
+    "pageContext": {}
+  }
 }
