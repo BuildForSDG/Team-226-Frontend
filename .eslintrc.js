@@ -16,7 +16,6 @@ module.exports = {
   },
   rules: {
     'comma-dangle': ['error', 'never'],
-    'no-param-reassign': ['error', { props: false }],
-    'no-missing-end-of-source-newline': null
+    'no-param-reassign': ['error', { props: false }]
   }
 };
