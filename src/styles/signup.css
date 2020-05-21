@@ -11,7 +11,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   width: 70%;
-	margin: 11% auto;
+  margin: 11% auto;
 }
 
 .signup-form {
@@ -28,14 +28,17 @@
   border-color: 1px solid transparent;
 }
 
-input:active, input:active, input:focus {
+input:active,
+input:active,
+input:focus {
   outline: none;
   box-shadow: none;
 }
 
 /* left container */
 
-.signup-info a, .signup-info a:hover {
+a.site-name,
+a.site-name:hover {
   text-decoration: none;
   color: #fff;
 }
@@ -63,7 +66,8 @@ input:active, input:active, input:focus {
   min-width: 100px;
 }
 
-.default-btn:hover, .default-btn:active {
+.default-btn:hover,
+.default-btn:active {
   background-color: #fff;
   border: 1px solid #216353;
   color: #216353;
@@ -99,13 +103,21 @@ label {
   display: block;
 }
 
-.default-btn:hover a, .default-btn a:hover{
-  color: #216353 !important;
+.default-btn:hover a,
+.default-btn a {
+  text-decoration: none;
+  color: #fff;
 }
 
+.default-btn:hover a,
+.default-btn a:hover {
+  color: #216353;
+}
 
 @media only screen and (max-width: 1024px) {
-  .signup-section, .signup-form, .signup-info {
+  .signup-section,
+  .signup-form,
+  .signup-info {
     border-radius: 0;
   }
 }

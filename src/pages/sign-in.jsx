@@ -36,7 +36,7 @@ const Signin = () => (
         </Form>
       </Col>
       <Col className="signin-info" md={6} sm={5} xs={12}>
-        <Link to="/" >SITE NAME</Link>
+        <Link to="/" className="site-name">SITE NAME</Link>
         <div className="info-elements">
           <p className="sub-title">DO YOU HAVE AN ACCOUNT?</p>
           <p className="medium-text">

@@ -12,7 +12,7 @@ const Signup = () => (
   <AuthLayout>
     <Row className="signup-section">
       <Col className="signup-info" md={6} sm={5} xs={12}>
-        <Link to="/" >SITE NAME</Link>
+        <Link className="site-name" to="/" >SITE NAME</Link>
         <div className="info-elements">
           <p className="sub-title">ALREADY HAVE AN ACCOUNT ?</p>
           <p className="medium-text">

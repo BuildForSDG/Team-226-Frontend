@@ -12,12 +12,6 @@
   padding: 8% 5%;
 }
 
-.signin-info a,
-.signin-info a:hover {
-  text-decoration: none;
-  color: #fff;
-}
-
 @media only screen and (max-width: 1024px) {
   .signup-section,
   .signin-form,
