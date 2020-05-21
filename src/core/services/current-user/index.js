@@ -16,13 +16,9 @@ const refresh = async () => {
     return Promise.reject();
   }
 
-  try {
-    const user = await api.loadUser(Store.userId);
-    CURRENT_USER = user;
-    return user;
-  } catch (e) {
-    return Promise.reject(e);
-  }
+  const user = await api.loadUser(Store.userId);
+  CURRENT_USER = user;
+  return user;
 };
 
 const get = async () => (CURRENT_USER ? Promise.resolve(CURRENT_USER) : refresh());
