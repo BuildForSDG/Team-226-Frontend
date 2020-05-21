@@ -19,7 +19,7 @@ const Signup = () => (
             Marshmallow cake chocolate bar biscuit chocolate cake dragée.
             Tootsie roll topping oat cake
         </p>
-          <Button className="default-btn" data-testid="login" size="sm">LOGIN</Button>
+          <Button className="default-btn" data-testid="login" size="sm"><Link to="/sign-in" >LOGIN</Link></Button>
         </div>
       </Col>
       <Col className="signup-form" md={6} sm={7} xs={12}>
