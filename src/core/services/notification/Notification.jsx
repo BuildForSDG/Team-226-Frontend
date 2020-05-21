@@ -34,7 +34,7 @@ export default function Notification({
         }
         footer={showFooter(resolveLabel, rejectLabel, hide, cancel)}
       >
-        <p>{message} {type} {resolveLabel} {rejectLabel}</p>
+        <p>{message}</p>
       </DialogWrapper>
     </span>;
 }
