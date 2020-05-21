@@ -103,8 +103,8 @@ label {
   display: block;
 }
 
-.default-btn:hover a,
-.default-btn a {
+.default-btn a,
+.default-btn:hover a {
   text-decoration: none;
   color: #fff;
 }
