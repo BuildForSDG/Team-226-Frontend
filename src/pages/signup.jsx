@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import AuthLayout from '../components/auth-layout';
 import '../styles/signup.css';
 import httpLoader from '../core/services/http-loader';
-import authenticationService from '../core/services/auth/authentication-service';
+import authenticationService from '../core/services/authentication-service';
 import { encodeToParams } from '../core/utils';
 import notificationService from '../core/services/notification';
 
@@ -31,7 +31,7 @@ const submit = async (data) => {
         title: 'Registration Successfull',
         message: 'Your account was successfully created. You can now login',
         resolveLabel: 'Login'
-      }).then(() => navigate('signin'));
+      }).then(() => navigate('sign-in'));
     } else {
       notificationService.showWarning({
         title: 'Error occured',

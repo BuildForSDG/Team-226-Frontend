@@ -13,7 +13,7 @@ function genericErrorPage(code) {
     case 500:
     case 400:
       return {
-        title: 'Something\'s gone very wrong!',
+        title: 'Something\'s gone wrong!',
         message: 'We will try to fix this as soon as possible.'
       };
     case 503:
@@ -64,14 +64,16 @@ const defaultErrorHandlingMap = {
   default: genericErrorPage
 };
 
-function handle(object) {
-  return NotificationService.showError({ rejectLabel: 'close', ...object });
+function handle(errorStatus, error) {
+  const handler = defaultErrorHandlingMap[errorStatus]
+    || defaultErrorHandlingMap.default;
+  const data = handler && handler(errorStatus, error);
+  return data && NotificationService.showError({ rejectLabel: 'close', ...data });
 }
 
 export default function handlError(httpError, options) {
   const errorStatus = httpError.status;
-  const handler = options[errorStatus]
-    || (() => handle(defaultErrorHandlingMap[errorStatus]))
-    || defaultErrorHandlingMap.default;
+  const handler = options[errorStatus] || ((s, e) => handle(s, e));
+
   return handler(errorStatus, httpError) || Promise.reject(httpError);
 }
