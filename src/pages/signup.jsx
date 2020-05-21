@@ -12,14 +12,14 @@ const Signup = () => (
   <AuthLayout>
     <Row className="signup-section">
       <Col className="signup-info" md={6} sm={5} xs={12}>
-        <Link to="/" >SITE NAME</Link>
+        <Link className="site-name" to="/" >SITE NAME</Link>
         <div className="info-elements">
           <p className="sub-title">ALREADY HAVE AN ACCOUNT ?</p>
           <p className="medium-text">
             Marshmallow cake chocolate bar biscuit chocolate cake dragée.
             Tootsie roll topping oat cake
         </p>
-          <Button className="default-btn" data-testid="login" size="sm">LOGIN</Button>
+          <Button className="default-btn" data-testid="login" size="sm"><Link to="/sign-in" >LOGIN</Link></Button>
         </div>
       </Col>
       <Col className="signup-form" md={6} sm={7} xs={12}>
