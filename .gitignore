@@ -109,3 +109,6 @@ dist
 
 # public
 public/*
+
+#vscode settings
+.vscode/*
