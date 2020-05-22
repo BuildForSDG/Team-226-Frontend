@@ -1,0 +1,26 @@
+.sidebar-profile {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  display: block;
+  margin: auto;
+}
+
+.sidebar-container {
+  padding-top: 50px;
+  background: #efefef;
+  min-height: 100vh;
+  border-right: 1px solid #e6e6e6;
+}
+
+.sidebar-name {
+  margin-top: 20px;
+}
+
+.list-group-item:first-child, .list-group-item:last-child {
+  border-radius: 0;
+}
+
+.list-group-item {
+  border-right: 0;
+}

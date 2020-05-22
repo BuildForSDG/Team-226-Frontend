@@ -10,7 +10,7 @@ import profile from '../../images/home-farmer.jpg';
 
 const LoggedHeader = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
-    <Navbar.Brand className="title" href="/feed">
+    <Navbar.Brand className="title" href="/home">
       {siteTitle}
     </Navbar.Brand>
     <Form.Group className="search-formGroup">
