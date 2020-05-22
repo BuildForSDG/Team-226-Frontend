@@ -43,10 +43,12 @@ export default class HttpClient {
   }
 
   interceptRequest(onSuccess, onError) {
-    this.axios.request.use(onSuccess, onError || ((error) => Promise.reject(error)));
+    this.axios.interceptors.request
+      .use(onSuccess, onError || (({ response }) => Promise.reject(response)));
   }
 
   interceptResponse(onSuccess, onError) {
-    this.axios.response.use(onSuccess, onError || ((error) => Promise.reject(error)));
+    this.axios.interceptors.response
+      .use(onSuccess, onError || (({ response }) => Promise.reject(response)));
   }
 }
