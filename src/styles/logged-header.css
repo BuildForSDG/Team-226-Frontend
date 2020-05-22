@@ -1,0 +1,34 @@
+.title {
+  color: #fff;
+}
+
+.search-formGroup {
+  margin-bottom: 7px;
+  margin-top: 10px;
+}
+
+.search-formGroup input {
+  border-radius: 25px;
+  font-size: 12px;
+  width: 350px;
+  margin-left: 30px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 570px) {
+  .search-formGroup input {
+    margin-left: 0;
+    width: 150px;
+  }
+}

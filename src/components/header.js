@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import '../styles/header.css';
 
 const Header = ({ siteTitle }) => (
-  <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky="top">
+  <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
     <Navbar.Brand href="/">{ siteTitle }</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
