@@ -10,7 +10,7 @@ import Sidebar from '../components/dashboard/sidebar';
 import profile from '../images/home-farmer.jpg';
 import '../styles/profile.css';
 
-function Dashboard() {
+function Profile() {
   return (
     <div>
       <LoggedHeader siteTitle="Farm Voice" />
@@ -21,8 +21,8 @@ function Dashboard() {
         <Col md={9} className="right-component">
         <div className="profile-container">
     <div className="profile-upload">
-      <img alt="upload" src={profile} />
-      <Form.File id="custom-file" label="Update profile" custom className="browse-btn" />
+      <img alt="upload" data-testid="profilePic" src={profile} />
+      <Form.File data-testid="uploadInput" id="custom-file" label="Update profile" custom className="browse-btn" />
     </div>
     <div className="profile-data">
       <Form>
@@ -70,7 +70,7 @@ function Dashboard() {
             <Form.Control data-testid="addressInput" type="text" size="sm" />
           </Form.Group>
         </Form.Row>
-        <Button className="default-btn signup-btn" type="submit" data-testid="signup" size="sm">
+        <Button className="default-btn signup-btn" type="submit" data-testid="update" size="sm">
           UPDATE
         </Button>
       </Form>
@@ -82,4 +82,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Profile;

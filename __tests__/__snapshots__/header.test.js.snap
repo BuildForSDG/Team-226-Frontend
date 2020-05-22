@@ -2,7 +2,7 @@
 
 exports[`Header renders correctly 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top"
+  className="navbar navbar-expand-lg navbar-dark sticky-top"
 >
   <a
     className="navbar-brand"
