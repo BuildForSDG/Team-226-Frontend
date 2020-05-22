@@ -11,8 +11,8 @@ const Sidebar = () => (
       <p className="text-center sidebar-name">Jane Doe</p>
     </div>
     <ListGroup>
-      <ListGroup.Item>Update Profile</ListGroup.Item>
-      <ListGroup.Item>Manage Resources</ListGroup.Item>
+      <ListGroup.Item active>Update Profile</ListGroup.Item>
+      <ListGroup.Item >Manage Resources</ListGroup.Item>
       <ListGroup.Item>Manage Lists</ListGroup.Item>
     </ListGroup>
   </div>

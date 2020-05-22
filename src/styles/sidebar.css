@@ -4,6 +4,7 @@
   border-radius: 75px;
   display: block;
   margin: auto;
+  object-fit: cover;
 }
 
 .sidebar-container {
@@ -23,4 +24,9 @@
 
 .list-group-item {
   border-right: 0;
+}
+
+.list-group-item.active {
+  background-color: #216353;
+  border-color: #216353;
 }
