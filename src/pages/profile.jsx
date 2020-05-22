@@ -27,45 +27,45 @@ function Dashboard() {
     <div className="profile-data">
       <Form>
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Group as={Col}>
             <Form.Label>Firstname</Form.Label>
             <Form.Control data-testid="firstnameInput" type="text" size="sm" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Group as={Col}>
             <Form.Label>Lastname</Form.Label>
             <Form.Control data-testid="lastnameInput" type="text" size="sm" />
           </Form.Group>
         </Form.Row>
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Group as={Col}>
             <Form.Label>Email</Form.Label>
             <Form.Control data-testid="emailInput" type="email" size="sm" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Group as={Col}>
             <Form.Label>Number</Form.Label>
             <Form.Control data-testid="numberInput" type="text" size="sm" />
           </Form.Group>
         </Form.Row>
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Group as={Col}>
             <Form.Label>Country</Form.Label>
             <Form.Control data-testid="countryInput" type="text" size="sm" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Group as={Col}>
             <Form.Label>State</Form.Label>
             <Form.Control data-testid="stateInput" type="text" size="sm" />
           </Form.Group>
         </Form.Row>
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Group as={Col}>
             <Form.Label>City</Form.Label>
             <Form.Control data-testid="cityInput" type="text" size="sm" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Group as={Col}>
             <Form.Label>Address</Form.Label>
             <Form.Control data-testid="addressInput" type="text" size="sm" />
           </Form.Group>
