@@ -19,12 +19,13 @@
   margin-top: 20px;
 }
 
-.list-group-item:first-child, .list-group-item:last-child {
-  border-radius: 0;
-}
-
 .list-group-item {
   border-right: 0;
+}
+
+.list-group-item:first-child,
+.list-group-item:last-child {
+  border-radius: 0;
 }
 
 .list-group-item.active {
@@ -33,14 +34,17 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .list-group-item+.list-group-item, .list-group-item.active {
+  .list-group-item + .list-group-item,
+  .list-group-item.active {
     font-size: 14px;
   }
+
   .sidebar-profile {
     height: 100px;
     width: 100px;
     border-radius: 50px;
   }
+
   .sidebar-container {
     min-height: 100%;
     margin-bottom: 40px;
