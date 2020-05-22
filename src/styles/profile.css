@@ -39,8 +39,24 @@
 
 .profile-upload .custom-file-label {
   border: 1px solid #eeeeee;
+  font-size: 12px;
 }
 
 .right-component.col-md-9 {
   padding-top: 4%;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-upload {
+    width: 100%;
+    margin-bottom: 30px;
+    min-height: 250px;
+  }
+  .profile-container {
+    display: block;
+  }
+  .profile-data {
+    width: 100%;
+    min-height: 250px;
+  }
 }
