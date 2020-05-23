@@ -5,34 +5,50 @@ import Button from 'react-bootstrap/Button';
 
 import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
-import { DialogService } from '../core/services/dialog';
+import DialogWrapper from '../core/services/dialog/DialogWrapper.jsx';
+import Modal from '../core/services/dialog';
+import notificationService from '../core/services/notification';
 
 import '../styles/resources.css';
 
 function Resources() {
   const viewResource = () => {
-    DialogService.show({
-      component: <div className="">
-      <div className="vertical-component">
-        <p className="resource-tit">Resource name some long name here</p>
-        <p className="medium-text">19-05-2020</p>
-      </div>
-      <p className="">
-        Fruitcake tart carrot cake jelly beans chocolate Sweet roll cupcake tart pastry.
-        Chocolate marzipanpuddinglollipop. Muffin ice cream gummies chupa chups halvah
-        toffee candy canes cand. Fruitcake tart carrot cake jelly
-        beans chocolate Sweet roll cupcake tart pastry. Chocolate marzipanpudding lollipop.
-        Muffin ice cream gummies chupa chups halvah toffee candy canes cand.
-      </p>
-      <div className="vertical-component">
-        <p className="medium-text grey-text">categoty name</p>
-        <div className="icon-section">
-          <p className="edit-text">Edit</p>
-          <p className="del-text">Delete</p>
+    Modal.show(
+      ({ hide, cancel }) => <DialogWrapper
+        header={<span>Resource name some long name here</span>}
+        hide={hide}
+        cancel={cancel}
+      >
+        <div>
+        <p className="medium-text">19-05-2020 - Categoty name</p>
+        <p className="">
+          Fruitcake tart carrot cake jelly beans chocolate Sweet roll cupcake tart pastry.
+          Chocolate marzipanpuddinglollipop. Muffin ice cream gummies chupa chups halvah
+          toffee candy canes cand. Fruitcake tart carrot cake jelly
+          beans chocolate Sweet roll cupcake tart pastry. Chocolate marzipanpudding lollipop.
+          Muffin ice cream gummies chupa chups halvah toffee candy canes cand.
+        </p>
         </div>
-      </div>
-    </div>
+      </DialogWrapper>
+    ).then((reason) => {
+      // When the dialog is submitted
+      // eslint-disable-next-line no-console
+      console.log(reason);
+    }).catch((reason) => {
+      // When the dialog is cancelled
+      // eslint-disable-next-line no-console
+      console.log(reason);
     });
+  };
+
+  const deleteResource = () => {
+    notificationService.showError({
+      title: 'Delete Resource',
+      message: 'Are you sure you want to delete?',
+      resolveLabel: 'Delete',
+      rejectLabel: 'Cancel'
+    // eslint-disable-next-line no-console
+    }).then(() => console.log('Resource deleted'));
   };
 
   return (
@@ -51,7 +67,7 @@ function Resources() {
             </div>
             <div className="single-resource">
               <div className="vertical-component">
-                <p className="resource-tit">
+                <p className="resource-tit" onClick={viewResource}>
                   Resource name some long name here
                 </p>
                 <p className="medium-text">19-05-2020</p>
@@ -67,7 +83,7 @@ function Resources() {
                 <p className="medium-text grey-text">categoty name</p>
                 <div className="icon-section">
                   <p className="edit-text">Edit</p>
-                  <p className="del-text">Delete</p>
+                  <p className="del-text" onClick={deleteResource}>Delete</p>
                 </div>
               </div>
             </div>
