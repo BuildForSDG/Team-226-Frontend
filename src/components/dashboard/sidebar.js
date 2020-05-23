@@ -1,5 +1,6 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { navigate } from 'gatsby';
 
 import '../../styles/sidebar.css';
 import profile from '../../images/home-farmer.jpg';
@@ -14,8 +15,8 @@ function Sidebar() {
         <p data-testid="username" className="text-center sidebar-name">Jane Doe</p>
       </div>
       <ListGroup>
-        <ListGroup.Item data-testid="profileLink" active={page === '/profile'}>Update Profile</ListGroup.Item>
-        <ListGroup.Item data-testid="resourcesLink" active={page === '/my-resources'}>Manage Resources</ListGroup.Item>
+        <ListGroup.Item data-testid="profileLink" active={page === '/profile'} onClick={() => navigate('/profile')}>Update Profile</ListGroup.Item>
+        <ListGroup.Item data-testid="resourcesLink" active={page === '/resources'} onClick={() => navigate('/resources')}>Manage Resources</ListGroup.Item>
         <ListGroup.Item data-testid="listLink" active={page === '/my-lists'}>Manage Lists</ListGroup.Item>
       </ListGroup>
     </div>
