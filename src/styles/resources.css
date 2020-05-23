@@ -42,8 +42,8 @@
 
 .single-resource-descr {
   line-height: 1.5em;
-    height: 3em;
-    overflow: hidden;
+  height: 3em;
+  overflow: hidden;
 }
 
 .edit-text {
@@ -90,6 +90,7 @@
   .single-resource {
     font-size: 13px;
   }
+
   .icon-section {
     width: 20%;
   }
@@ -99,12 +100,15 @@
   .resources-container {
     width: 95%;
   }
+
   .single-resource {
     width: 98%;
   }
+
   .icon-section {
     width: 25%;
   }
+
   .btn-new {
     width: 98%;
   }
