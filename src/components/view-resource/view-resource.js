@@ -1,13 +1,15 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+
 import DialogWrapper from '../../core/services/dialog/DialogWrapper.jsx';
 import Modal from '../../core/services/dialog';
-
 import '../../styles/view-resource.css';
 
 const ViewResource = () => {
   Modal.show(({ hide, cancel }) => (
     <DialogWrapper
       header={<span className="resource-modal-title">Resource name some long name here</span>}
+      footer={<Button className="default-btn" data-testid="doneeResource" size="sm" onClick={hide}>DONE</Button>}
       hide={hide}
       cancel={cancel}
     >
