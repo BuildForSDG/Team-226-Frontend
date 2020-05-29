@@ -1,0 +1,63 @@
+.profile-upload {
+  width: 30%;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+  min-height: 500px;
+  padding: 2%;
+}
+
+.profile-upload img {
+  object-fit: cover;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.profile-data {
+  width: 60%;
+  min-height: 500px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+  padding: 4% 2%;
+}
+
+.profile-data button {
+  margin-top: 30px;
+}
+
+.profile-upload .custom-file-label::after {
+  background-color: #216353;
+  color: #fff;
+  content: 'UPLOAD';
+}
+
+.profile-upload .custom-file-label {
+  border: 1px solid #eee;
+  font-size: 12px;
+}
+
+.right-component.col-md-9 {
+  padding-top: 4%;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-upload {
+    width: 100%;
+    margin-bottom: 30px;
+    min-height: 250px;
+  }
+
+  .profile-container {
+    display: block;
+  }
+
+  .profile-data {
+    width: 100%;
+    min-height: 250px;
+  }
+}
