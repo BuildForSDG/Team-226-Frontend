@@ -34,7 +34,7 @@ function Resources() {
         <Col md={9} className="right-component">
           <div className="resources-container">
             <div className="btn-new">
-              <Button className="default-btn new-resource-btn" data-testid="newResource" size="sm" onClick={CreateResource}>
+              <Button className="default-btn new-resource-btn" data-testid="newResource" size="sm" onClick={() => CreateResource('Create Resource')}>
                 NEW
               </Button>
             </div>
@@ -55,7 +55,7 @@ function Resources() {
               <div className="vertical-component">
                 <p className="medium-text grey-text">categoty name</p>
                 <div className="icon-section">
-                  <p className="edit-text">Edit</p>
+                  <p className="edit-text" onClick={() => CreateResource('Edit Resource')}>Edit</p>
                   <p className="del-text" onClick={deleteResource}>
                     Delete
                   </p>

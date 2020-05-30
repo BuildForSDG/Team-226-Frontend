@@ -2,15 +2,16 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
 
 import DialogWrapper from '../../core/services/dialog/DialogWrapper.jsx';
 import Modal from '../../core/services/dialog';
 import '../../styles/create-resource.css';
 
-const CreateResource = () => {
+const CreateResource = (title) => {
   Modal.show(({ hide, cancel }) => (
     <DialogWrapper
-      header={<span className="resource-modal-title">Create Resource</span>}
+      header={<span className="resource-modal-title">{title}</span>}
       footer={
       <div className="create-resource-footer vertical-component">
         <Button className="cancel-btn" data-testid="cancelresource" size="sm" onClick={cancel}>CANCEL</Button>
@@ -39,6 +40,14 @@ const CreateResource = () => {
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea" rows="4" data-testid="descriptionInput" />
           </Form.Group>
+          <Form.Group>
+            <Form.Label>Visibility</Form.Label>
+            <Form.Control as="select" data-testid="visibilityInput">
+              <option></option>
+              <option>Everyone</option>
+              <option>Registered Users</option>
+            </Form.Control>
+          </Form.Group>
           <Form.Group controlId="formGridEmail">
             <Form.Label>Video</Form.Label>
             <InputGroup size="sm">
@@ -62,6 +71,10 @@ const CreateResource = () => {
       </div>
     </DialogWrapper>
   ));
+};
+
+CreateResource.propTypes = {
+  title: PropTypes.string
 };
 
 export default CreateResource;

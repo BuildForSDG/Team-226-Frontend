@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
 import notificationService from '../core/services/notification';
-import CreateResource from '../components/create-resource/create-resource';
+import CreateList from '../components/create-list/creste-list';
 import ViewResource from '../components/view-resource/view-resource';
 
 import '../styles/resources.css';
@@ -34,7 +34,7 @@ function Lists() {
         <Col md={9} className="right-component">
           <div className="resources-container">
             <div className="btn-new">
-              <Button className="default-btn new-resource-btn" data-testid="newResource" size="sm" onClick={CreateResource}>
+              <Button className="default-btn new-resource-btn" data-testid="newResource" size="sm" onClick={() => CreateList('Create List')}>
                 NEW
               </Button>
             </div>
@@ -48,7 +48,7 @@ function Lists() {
               <div className="vertical-component">
                 <p className="medium-text grey-text">12 Resources</p>
                 <div className="icon-section">
-                  <p className="edit-text">Edit</p>
+                  <p className="edit-text" onClick={() => CreateList('Edit List')}>Edit</p>
                   <p className="del-text" onClick={deleteResource}>
                     Delete
                   </p>
