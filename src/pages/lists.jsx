@@ -7,7 +7,7 @@ import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
 import notificationService from '../core/services/notification';
 import CreateList from '../components/create-list/creste-list';
-import ViewResource from '../components/view-resource/view-resource';
+import ViewList from '../components/view-list/view-list';
 
 import '../styles/resources.css';
 
@@ -40,7 +40,7 @@ function Lists() {
             </div>
             <div className="single-resource">
               <div className="vertical-component">
-                <p className="resource-tit" onClick={ViewResource}>
+                <p className="resource-tit" onClick={ViewList}>
                   List name some long name here
                 </p>
                 <p className="medium-text">19-05-2020</p>
