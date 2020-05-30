@@ -19,8 +19,8 @@ function Lists() {
         message: 'Are you sure you want to delete?',
         resolveLabel: 'Delete',
         rejectLabel: 'Cancel'
-        // eslint-disable-next-line no-console
       })
+      // eslint-disable-next-line no-console
       .then(() => console.log('Resource deleted'));
   };
 
@@ -57,27 +57,35 @@ function Lists() {
             </div>
             <div className="single-resource">
               <div className="vertical-component">
-                <p className="resource-tit">List name some long name here</p>
-                <p className="medium-text">19-05-2020</p>
-              </div>
-              <div className="vertical-component">
-                <p className="medium-text grey-text">5 Resources</p>
-                <div className="icon-section">
-                  <p className="edit-text">Edit</p>
-                  <p className="del-text">Delete</p>
-                </div>
-              </div>
-            </div>
-            <div className="single-resource">
-              <div className="vertical-component">
-                <p className="resource-tit">List name some long name here</p>
+                <p className="resource-tit" onClick={ViewList}>
+                  List name some long name here
+                </p>
                 <p className="medium-text">19-05-2020</p>
               </div>
               <div className="vertical-component">
                 <p className="medium-text grey-text">0 Resources</p>
                 <div className="icon-section">
-                  <p className="edit-text">Edit</p>
-                  <p className="del-text">Delete</p>
+                  <p className="edit-text" onClick={() => CreateList('Edit List')}>Edit</p>
+                  <p className="del-text" onClick={deleteResource}>
+                    Delete
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="single-resource">
+              <div className="vertical-component">
+                <p className="resource-tit" onClick={ViewList}>
+                  List name some long name here
+                </p>
+                <p className="medium-text">19-05-2020</p>
+              </div>
+              <div className="vertical-component">
+                <p className="medium-text grey-text">3 Resources</p>
+                <div className="icon-section">
+                  <p className="edit-text" onClick={() => CreateList('Edit List')}>Edit</p>
+                  <p className="del-text" onClick={deleteResource}>
+                    Delete
+                  </p>
                 </div>
               </div>
             </div>
