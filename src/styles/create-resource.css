@@ -44,3 +44,17 @@
   font-size: 10px;
   min-width: 100px;
 }
+
+@media only screen and (max-width: 768px) {
+  .resource-create-body {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .resource-create-body {
+    width: 250px;
+    margin: auto;
+  }
+}
