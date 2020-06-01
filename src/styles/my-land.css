@@ -6,3 +6,10 @@
   background-color: #368571;
   color: #fff;
 }
+
+.land-icon-section {
+  margin-left: 50%;
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
