@@ -7,6 +7,7 @@ import notificationService from '../core/services/notification';
 
 import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
+import ViewLand from '../components/view-land/view-land';
 
 import '../styles/my-land.css';
 
@@ -33,7 +34,7 @@ function MyLand() {
         </Col>
         <Col md={9} className="right-component">
           <div className="resources-container">
-            <div className="btn-new">
+            <div className="btn-new-container">
               <Button className="default-btn new-resource-btn" data-testid="newLand" size="sm">
                 NEW
               </Button>
@@ -42,8 +43,8 @@ function MyLand() {
               {test.map((item) => (
                 <Col key={item} lg={4} sm={6} className="single-land">
                   <Card bg="light" text="dark">
-                    <Card.Header>
-                      700 <sup>2</sup> M - <span className="medium-text">Rent</span>
+                    <Card.Header onClick={ViewLand}>
+                      700 <sup>2</sup> m - <span className="medium-text">Rent</span>
                     </Card.Header>
                     <Card.Body>
                       <Card.Title>The Land title here</Card.Title>
