@@ -2,28 +2,15 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
-import notificationService from '../core/services/notification';
-import CreateList from '../components/create-list/creste-list';
-import ViewList from '../components/view-list/view-list';
 
-import '../styles/resources.css';
+import '../styles/my-land.css';
 
 function MyLand() {
-  const deleteResource = () => {
-    notificationService
-      .showError({
-        title: 'Delete List',
-        message: 'Are you sure you want to delete?',
-        resolveLabel: 'Delete',
-        rejectLabel: 'Cancel'
-      })
-      // eslint-disable-next-line no-console
-      .then(() => console.log('Resource deleted'));
-  };
-
+  const test = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <div>
       <LoggedHeader siteTitle="Farm Voice" />
@@ -34,61 +21,27 @@ function MyLand() {
         <Col md={9} className="right-component">
           <div className="resources-container">
             <div className="btn-new">
-              <Button className="default-btn new-resource-btn" data-testid="newResource" size="sm" onClick={() => CreateList('Create List')}>
+              <Button className="default-btn new-resource-btn" data-testid="newLand" size="sm">
                 NEW
               </Button>
             </div>
-            <div className="single-resource">
-              <div className="vertical-component">
-                <p className="resource-tit" onClick={ViewList}>
-                  List name some long name here
-                </p>
-                <p className="medium-text">19-05-2020</p>
-              </div>
-              <div className="vertical-component">
-                <p className="medium-text grey-text">12 Resources</p>
-                <div className="icon-section">
-                  <p className="edit-text" onClick={() => CreateList('Edit List')}>Edit</p>
-                  <p className="del-text" onClick={deleteResource}>
-                    Delete
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="single-resource">
-              <div className="vertical-component">
-                <p className="resource-tit" onClick={ViewList}>
-                  List name some long name here
-                </p>
-                <p className="medium-text">19-05-2020</p>
-              </div>
-              <div className="vertical-component">
-                <p className="medium-text grey-text">0 Resources</p>
-                <div className="icon-section">
-                  <p className="edit-text" onClick={() => CreateList('Edit List')}>Edit</p>
-                  <p className="del-text" onClick={deleteResource}>
-                    Delete
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="single-resource">
-              <div className="vertical-component">
-                <p className="resource-tit" onClick={ViewList}>
-                  List name some long name here
-                </p>
-                <p className="medium-text">19-05-2020</p>
-              </div>
-              <div className="vertical-component">
-                <p className="medium-text grey-text">3 Resources</p>
-                <div className="icon-section">
-                  <p className="edit-text" onClick={() => CreateList('Edit List')}>Edit</p>
-                  <p className="del-text" onClick={deleteResource}>
-                    Delete
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Row>
+              {test.map((item) => (
+                  <Col key={item} lg={4} sm={6} className="single-land">
+                    <Card bg="light" text="dark">
+                      <Card.Header>700 <sup>2</sup> M - <span className="medium-text">Rent</span></Card.Header>
+                      <Card.Body>
+                        <Card.Title>The Land title here</Card.Title>
+                        <Card.Text className="medium-text">
+                          Cameroon, South-West, Tiko
+                          <br />
+                          0 <strong>XAF</strong>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+              ))}
+            </Row>
           </div>
         </Col>
       </Row>
