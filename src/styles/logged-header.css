@@ -26,6 +26,32 @@
   margin-bottom: 0;
 }
 
+.dashboard-link .dropdown-toggle {
+  display: flex;
+}
+
+.dashboard-link .dropdown-toggle::after {
+  margin-top: 12px;
+}
+
+.dropdown-item:active,
+.dropdown-item:focus {
+  background-color: #216353;
+  color: #fff;
+}
+
+@media only screen and (max-width: 990px) {
+  .dropdown-menu.show {
+    background-color: transparent;
+  }
+  .dropdown-menu.show a {
+    color: #fff;
+  }
+  .dashboard-link {
+    border: 0;
+  }
+}
+
 @media only screen and (max-width: 570px) {
   .search-formGroup input {
     margin-left: 0;
