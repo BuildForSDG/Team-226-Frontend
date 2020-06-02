@@ -24,7 +24,7 @@ const LoggedHeader = ({ siteTitle }) => (
       <Nav>
         <Nav.Link data-testid="resourcesLink" as={Link} to="/">Resources</Nav.Link>
         <Nav.Link data-testid="landLink" as={Link} to="/">Land</Nav.Link>
-        <NavDropdown title={<div><img alt="user profile" className="profile-pic" src={profile} />Jane Doe</div>} className="dashboard-link">
+        <NavDropdown data-testid="profileLink" title={<div><img alt="user profile" className="profile-pic" src={profile} />Jane Doe</div>} className="dashboard-link">
         <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>
         <NavDropdown.Item as={Link} to="/resources">Dashboard</NavDropdown.Item>
         <NavDropdown.Divider />
