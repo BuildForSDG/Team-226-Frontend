@@ -19,9 +19,7 @@ function Resources() {
         message: 'Are you sure you want to delete?',
         resolveLabel: 'Delete',
         rejectLabel: 'Cancel'
-        // eslint-disable-next-line no-console
-      })
-      .then(() => console.log('Resource deleted'));
+      });
   };
 
   return (

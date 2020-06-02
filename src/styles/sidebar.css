@@ -38,8 +38,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-
-  .list-group-item+.list-group-item,
+  .list-group-item + .list-group-item,
   .list-group-item.active {
     font-size: 14px;
   }
