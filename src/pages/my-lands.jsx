@@ -8,6 +8,7 @@ import notificationService from '../core/services/notification';
 import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
 import ViewLand from '../components/view-land/view-land';
+import CreateLand from '../components/create-land/create-land';
 
 import '../styles/my-land.css';
 
@@ -35,7 +36,7 @@ function MyLand() {
         <Col md={9} className="right-component">
           <div className="resources-container">
             <div className="btn-new-container">
-              <Button className="default-btn new-resource-btn" data-testid="newLand" size="sm">
+              <Button className="default-btn new-resource-btn" data-testid="newLand" size="sm" onClick={() => CreateLand('Create Land')}>
                 NEW
               </Button>
             </div>
@@ -53,7 +54,7 @@ function MyLand() {
                         <br />0 <strong>XAF</strong>
                         <br />
                         <div className="land-icon-section">
-                          <span className="edit-text">Edit</span>
+                          <span className="edit-text" onClick={() => CreateLand('Edit Land')}>Edit</span>
                           <span className="del-text medium-text" onClick={deleteLand}>
                             Delete
                           </span>
