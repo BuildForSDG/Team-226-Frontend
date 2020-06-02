@@ -1,8 +1,8 @@
 .profile-upload {
   width: 30%;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 5px 6px #ccc;
+  -webkit-box-shadow: 0 5px 6px #ccc;
+  box-shadow: 0 5px 6px #ccc;
   min-height: 500px;
   padding: 2%;
 }
@@ -20,9 +20,9 @@
 .profile-data {
   width: 60%;
   min-height: 500px;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 5px 6px #ccc;
+  -webkit-box-shadow: 0 5px 6px #ccc;
+  box-shadow: 0 5px 6px #ccc;
   padding: 4% 2%;
 }
 
