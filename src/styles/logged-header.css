@@ -44,9 +44,11 @@
   .dropdown-menu.show {
     background-color: transparent;
   }
+
   .dropdown-menu.show a {
     color: #fff;
   }
+
   .dashboard-link {
     border: 0;
   }
