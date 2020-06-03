@@ -27,7 +27,7 @@ const submit = async (data) => {
 
   currentUser.saveToken({ token, refresh, ...user });
   currentUser.set(user);
-  navigate('/');
+  navigate('/profile');
 };
 
 const Signin = () => {

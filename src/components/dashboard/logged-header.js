@@ -7,6 +7,8 @@ import Form from 'react-bootstrap/Form';
 
 import '../../styles/logged-header.css';
 import profile from '../../images/home-farmer.jpg';
+import currentUser from '../../core/services/current-user';
+import httpLoader from '../../core/services/http-loader';
 
 const LoggedHeader = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
@@ -22,6 +24,7 @@ const LoggedHeader = ({ siteTitle }) => (
         <Nav.Link data-testid="resourcesLink" href="/">Resources</Nav.Link>
         <Nav.Link data-testid="landLink" href="/">Land</Nav.Link>
         <Nav.Link data-testid="profileLink" href="/profile"><img alt="user profile" className="profile-pic" src={profile} />Jane Doe</Nav.Link>
+        <Nav.Link data-testid="logout" onClick={() => httpLoader.onSave(currentUser.logoutAndRedirect(), null, 'Loggin you out...')}>Logout</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

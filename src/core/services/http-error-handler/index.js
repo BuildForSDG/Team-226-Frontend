@@ -72,7 +72,7 @@ function handle(errorStatus, error) {
 }
 
 export default function handlError(httpError, options) {
-  const errorStatus = httpError.status;
+  const errorStatus = httpError && httpError.status;
   const handler = options[errorStatus] || ((s, e) => handle(s, e));
 
   return handler(errorStatus, httpError) || Promise.reject(httpError);
