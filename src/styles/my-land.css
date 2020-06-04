@@ -1,0 +1,25 @@
+.single-land {
+  margin-bottom: 20px;
+}
+
+.single-land .card .card-header {
+  background-color: #368571;
+  color: #fff;
+}
+
+.single-land .card .card-header:hover {
+  cursor: pointer;
+}
+
+.land-icon-section {
+  margin-left: 50%;
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-new-container {
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}

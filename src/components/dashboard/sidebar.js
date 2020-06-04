@@ -18,6 +18,7 @@ function Sidebar() {
         <ListGroup.Item data-testid="profileLink" active={page === '/profile'} onClick={() => navigate('/profile')}>Update Profile</ListGroup.Item>
         <ListGroup.Item data-testid="resourcesLink" active={page === '/resources'} onClick={() => navigate('/resources')}>Manage Resources</ListGroup.Item>
         <ListGroup.Item data-testid="listLink" active={page === '/lists'} onClick={() => navigate('/lists')}>Manage Lists</ListGroup.Item>
+        <ListGroup.Item data-testid="landLink" active={page === '/my-lands'} onClick={() => navigate('/my-lands')}>Manage Lands</ListGroup.Item>
       </ListGroup>
     </div>
   );

@@ -21,5 +21,8 @@ describe('Sidebar', () => {
 
     const list = getByTestId('listLink');
     expect(list).toBeInTheDocument();
+
+    const land = getByTestId('landLink');
+    expect(land).toBeInTheDocument();
   });
 });
