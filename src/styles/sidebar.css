@@ -15,6 +15,10 @@
   border-right: 1px solid #e6e6e6;
 }
 
+.sidebar-container .list-group-item {
+  cursor: pointer;
+}
+
 .sidebar-name {
   margin-top: 20px;
 }

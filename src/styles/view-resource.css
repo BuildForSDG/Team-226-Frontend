@@ -1,0 +1,21 @@
+.resource-modal-body {
+  width: 700px;
+}
+
+.resource-modal-title {
+  margin-top: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .resource-modal-body {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .resource-modal-body {
+    width: 250px;
+    margin: auto;
+  }
+}

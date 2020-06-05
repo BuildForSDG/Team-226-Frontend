@@ -1,0 +1,60 @@
+.resource-create-body {
+  width: 500px;
+  padding: 2% 5%;
+}
+
+.small-text {
+  font-size: 10px;
+}
+
+.create-resource-video {
+  margin-bottom: 7px;
+}
+
+.delete-x {
+  cursor: pointer;
+}
+
+.create-resource-footer {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.dialog-component__footer button.default-btn {
+  background-color: #216353;
+  border: 1px solid #fff;
+  font-size: 10px;
+  min-width: 100px;
+}
+
+.dialog-component__footer button.default-btn:hover,
+.dialog-component__footer button.default-btn:focus {
+  background-color: #fff;
+  border: 1px solid #216353;
+  color: #216353;
+}
+
+.dialog-component__footer button.cancel-btn,
+.dialog-component__footer button.cancel-btn:hover,
+.dialog-component__footer button.cancel-btn:focus {
+  color: #216353;
+  background: #efefef;
+  border: 1px solid #dedcdc;
+  font-size: 10px;
+  min-width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .resource-create-body {
+    width: 360px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .resource-create-body {
+    width: 250px;
+    margin: auto;
+  }
+}
