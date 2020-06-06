@@ -20,7 +20,6 @@ const Feed = () => {
       <Container className="feed-container">
         <Row>
           <Col md={{ span: 7 }} className="main-container">
-            <h4 className="feed-title">Feed</h4>
             {test.map((item) => (
               <div key={item} className="single-feed">
                 <div className="feed-top-section">
