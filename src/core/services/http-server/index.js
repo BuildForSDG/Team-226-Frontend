@@ -7,7 +7,7 @@ class HttpServer extends HttpClient {
     super(`${config.API_URL}/api/`);
 
     this.interceptRequest((request) => {
-      if (store.token) {
+      if (store.token && request.url !== 'auth/login/') {
         request.headers.common.Authorization = `Bearer ${store.token}`;
       }
       return request;
