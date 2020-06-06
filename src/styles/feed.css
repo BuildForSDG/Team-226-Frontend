@@ -17,7 +17,8 @@
 }
 
 .single-feed {
-  overflow-y: scroll;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 10px;
 }
 
 .single-trending {
@@ -32,6 +33,7 @@
 
 .trend-title {
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .trend-description {
@@ -42,4 +44,54 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   max-height: 4;
+}
+
+.feed-profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.feed-top-section {
+  padding: 3px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.feed-bottom-section {
+  padding: 5px 10px;
+}
+
+.vertical-alignment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.feed-name {
+  margin-top: 5px;
+}
+
+.feed-user-section {
+  margin-right: 20px;
+}
+
+.single-feed-title {
+  margin-top: 10px;
+}
+
+.single-feed iframe {
+  margin-bottom: 0;
+}
+
+.comment-input {
+  border-radius: calc(0.75em + .25rem + 1px);
 }
