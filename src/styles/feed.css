@@ -1,0 +1,45 @@
+.feed-container {
+  margin-top: 30px;
+}
+
+.main-container {
+  -moz-box-shadow: 0 5px 6px #ccc;
+  -webkit-box-shadow: 0 5px 6px #ccc;
+  box-shadow: 0 5px 6px #ccc;
+  padding: 20px;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.feed-title {
+  color: #216353;
+  margin-bottom: 15px;
+}
+
+.single-feed {
+  overflow-y: scroll;
+}
+
+.single-trending {
+  padding: 7px;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 10px;
+}
+
+.grey {
+  color: #979797;
+}
+
+.trend-title {
+  margin-bottom: 5px;
+}
+
+.trend-description {
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 4;
+}
