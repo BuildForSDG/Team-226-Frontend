@@ -3,6 +3,10 @@
   padding: 2% 5%;
 }
 
+.red {
+  color: #a00404;
+}
+
 .small-text {
   font-size: 10px;
 }

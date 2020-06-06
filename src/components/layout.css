@@ -621,3 +621,24 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+textarea:hover, 
+input:hover,
+select:hover, 
+textarea:active,
+input:active,
+select:active, 
+textarea:focus, 
+input:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}

@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 import Loggedlayout from '../components/logged-layout';
 import currentUser from '../core/services/current-user';
+import CreateResource from '../components/create-resource/create-resource';
 import profile from '../images/home-farmer.jpg';
 import '../styles/feed.css';
 
@@ -22,7 +23,7 @@ const Feed = () => {
         <Row>
           <Col md={{ span: 7 }} className="main-container">
           <div className="btn-new-container">
-              <Button className="default-btn new-resource-btn" data-testid="newPost" size="sm">
+              <Button className="default-btn new-resource-btn" data-testid="newPost" size="sm" onClick={() => CreateResource('Create Resource')}>
                 New Post
               </Button>
             </div>
