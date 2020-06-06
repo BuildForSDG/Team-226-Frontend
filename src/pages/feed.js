@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 import Loggedlayout from '../components/logged-layout';
 import currentUser from '../core/services/current-user';
@@ -20,6 +21,11 @@ const Feed = () => {
       <Container className="feed-container">
         <Row>
           <Col md={{ span: 7 }} className="main-container">
+          <div className="btn-new-container">
+              <Button className="default-btn new-resource-btn" data-testid="newPost" size="sm">
+                New Post
+              </Button>
+            </div>
             {test.map((item) => (
               <div key={item} className="single-feed">
                 <div className="feed-top-section">
