@@ -2,10 +2,12 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 import PropTypes from 'prop-types';
 
 import DialogWrapper from '../../core/services/dialog/DialogWrapper.jsx';
 import Modal from '../../core/services/dialog';
+import CreateCategory from '../create-category/create-category';
 import { encodeToParams } from '../../core/utils';
 import notificationService from '../../core/services/notification';
 import httpLoader from '../../core/services/http-loader';
@@ -15,25 +17,25 @@ import '../../styles/create-resource.css';
 const CreateResource = (title) => {
   const create = async (data) => {
     try {
-      const { response } = await httpLoader
-        .onLoad(
-          resourceService.createResource(encodeToParams(data)),
-          {
-            400: () => notificationService.showWarning({
-              title: 'Error',
-              message: 'The Email address you specified has already been taken. Please verify that you typed it correctly or proceed to sign in.',
-              rejectLabel: 'close'
-            })
-          }
-        );
+      const { response } = await httpLoader.onLoad(
+        resourceService.createResource(encodeToParams(data)), {
+          400: () => notificationService.showWarning({
+            title: 'Error',
+            message:
+              'The Email address you specified has already been taken. Please verify that you typed it correctly or proceed to sign in.',
+            rejectLabel: 'close'
+          })
+        }
+      );
 
       if (response === 'success') {
-        notificationService.showSuccess({
-          title: 'Registration Successfull',
-          message: 'Your account was successfully created. You can now login',
-          resolveLabel: 'Login'
-        // eslint-disable-next-line no-alert
-        }).then(() => alert('Done'));
+        notificationService
+          .showSuccess({
+            title: 'Registration Successfull',
+            message: 'Your account was successfully created. You can now login',
+            resolveLabel: 'Login'
+          });
+        // .then(() => alert('Done'));
       } else {
         notificationService.showWarning({
           title: 'Error occured',
@@ -42,7 +44,9 @@ const CreateResource = (title) => {
         });
       }
       return response;
-    } catch (e) { return e; }
+    } catch (e) {
+      return e;
+    }
   };
 
   const handleSubmit = (event) => {
@@ -61,15 +65,18 @@ const CreateResource = (title) => {
       });
     }
   };
-  // resourceService.getResourceCategory().then((data) => console.log(data));
   Modal.show(({ hide, cancel }) => (
     <DialogWrapper
       header={<span className="resource-modal-title">{title}</span>}
       footer={
-      <div className="create-resource-footer vertical-component">
-        <Button className="cancel-btn" data-testid="cancelresource" size="sm" onClick={cancel}>CANCEL</Button>
-        <Button className="default-btn" data-testid="saveCreateResource" size="sm" onClick={hide}>SAVE</Button>
-      </div>
+        <div className="create-resource-footer vertical-component">
+          <Button className="cancel-btn" data-testid="cancelresource" size="sm" onClick={cancel}>
+            CANCEL
+          </Button>
+          <Button className="default-btn" data-testid="saveCreateResource" size="sm" onClick={hide}>
+            SAVE
+          </Button>
+        </div>
       }
       hide={hide}
       cancel={cancel}
@@ -77,11 +84,16 @@ const CreateResource = (title) => {
       <div className="resource-create-body">
         <Form onSubmit={handleSubmit}>
           <Form.Group>
-            <Form.Label>Title <span className="red">*</span></Form.Label>
+            <Form.Label>
+              Title <span className="red">*</span>
+            </Form.Label>
             <Form.Control data-testid="titleInput" size="sm" required />
           </Form.Group>
           <Form.Group>
-            <Form.Label >Category <span className="red">*</span></Form.Label>
+            <Form.Label>
+              Category <span className="red">*</span>
+              <Badge className="new-category" variant="success" onClick={() => CreateCategory('Create Category')}>Add</Badge>
+            </Form.Label>
             <Form.Control as="select" data-testid="categoryInput">
               <option></option>
               <option>Some category</option>
