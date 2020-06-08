@@ -101,6 +101,7 @@
     width: 45%;
     margin-right: 10px;
   }
+
   .feed-profile {
     margin-right: 7px;
   }
@@ -111,9 +112,11 @@
     width: 40%;
     margin-right: 7px;
   }
+
   .feed-profile {
     margin-right: 5px;
   }
+
   .single-feed-title {
     margin-top: 0;
   }
@@ -129,12 +132,15 @@
   .feed-user-section {
     width: 80%;
   }
+
   .feed-user-section p {
     font-size: 10px;
   }
+
   .feed-user-section .small-text {
     font-size: 8px;
   }
+
   .feed-profile {
     margin-right: 3px;
   }

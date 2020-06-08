@@ -49,6 +49,16 @@
   min-width: 100px;
 }
 
+button.cancel-btn,
+button.cancel-btn:hover,
+button.cancel-btn:focus {
+  color: #216353;
+  background: #efefef;
+  border: 1px solid #dedcdc;
+  font-size: 10px;
+  min-width: 100px;
+}
+
 .new-category {
   margin-left: 10px;
   font-size: 11px;

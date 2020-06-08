@@ -8,63 +8,9 @@ import PropTypes from 'prop-types';
 import DialogWrapper from '../../core/services/dialog/DialogWrapper.jsx';
 import Modal from '../../core/services/dialog';
 import CreateCategory from '../create-category/create-category';
-import { encodeToParams } from '../../core/utils';
-import notificationService from '../../core/services/notification';
-import httpLoader from '../../core/services/http-loader';
-import resourceService from '../../core/services/resource-service';
 import '../../styles/create-resource.css';
 
 const CreateResource = (title) => {
-  const create = async (data) => {
-    try {
-      const { response } = await httpLoader.onLoad(
-        resourceService.createResource(encodeToParams(data)), {
-          400: () => notificationService.showWarning({
-            title: 'Error',
-            message:
-              'The Email address you specified has already been taken. Please verify that you typed it correctly or proceed to sign in.',
-            rejectLabel: 'close'
-          })
-        }
-      );
-
-      if (response === 'success') {
-        notificationService
-          .showSuccess({
-            title: 'Registration Successfull',
-            message: 'Your account was successfully created. You can now login',
-            resolveLabel: 'Login'
-          });
-        // .then(() => alert('Done'));
-      } else {
-        notificationService.showWarning({
-          title: 'Error occured',
-          message: 'There was an error registering. Please check your inputs and try again',
-          resolveLabel: 'close'
-        });
-      }
-      return response;
-    } catch (e) {
-      return e;
-    }
-  };
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (form.checkValidity()) {
-      create({
-        first_name: form.formGridFirstName.value,
-        last_name: form.formGridLastName.value,
-        email: form.formGridEmail.value,
-        password: form.formGridPassword.value,
-        password2: form.formGridPassword.value
-      });
-    }
-  };
   Modal.show(({ hide, cancel }) => (
     <DialogWrapper
       header={<span className="resource-modal-title">{title}</span>}
@@ -82,7 +28,7 @@ const CreateResource = (title) => {
       cancel={cancel}
     >
       <div className="resource-create-body">
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <Form.Group>
             <Form.Label>
               Title <span className="red">*</span>
@@ -92,7 +38,9 @@ const CreateResource = (title) => {
           <Form.Group>
             <Form.Label>
               Category <span className="red">*</span>
-              <Badge className="new-category" variant="success" onClick={() => CreateCategory('Create Category')}>Add</Badge>
+              <Badge className="new-category" variant="success" onClick={() => CreateCategory('Create Category')}>
+                Add
+              </Badge>
             </Form.Label>
             <Form.Control as="select" data-testid="categoryInput">
               <option></option>
