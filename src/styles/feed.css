@@ -93,7 +93,7 @@
 }
 
 .comment-input {
-  border-radius: calc(0.75em + .25rem + 1px);
+  border-radius: calc(0.75em + 0.25rem + 1px);
 }
 
 @media only screen and (max-width: 990px) and (min-width: 768px) {
