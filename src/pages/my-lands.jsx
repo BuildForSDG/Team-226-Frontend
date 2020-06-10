@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -9,10 +9,12 @@ import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
 import ViewLand from '../components/view-land/view-land';
 import CreateLand from '../components/create-land/create-land';
+import landService from '../core/services/land-service';
 
 import '../styles/my-land.css';
 
 function MyLand() {
+  const [lands, setLands] = useState([]);
   const test = [1, 2, 3, 4, 5, 6, 7, 8];
   const deleteLand = () => {
     notificationService
@@ -26,6 +28,10 @@ function MyLand() {
       .then(() => console.log('Land deleted'));
   };
 
+  useEffect(() => {
+    landService.getUserLands().then((data) => setLands(data));
+  }, []);
+  console.log(lands);
   return (
     <div>
       <LoggedHeader siteTitle="Farm Voice" />
@@ -41,7 +47,8 @@ function MyLand() {
               </Button>
             </div>
             <Row>
-              {test.map((item) => (
+              { lands.length > 0
+                ? lands.map((item) => (
                 <Col key={item} lg={4} sm={6} className="single-land">
                   <Card bg="light" text="dark">
                     <Card.Header onClick={ViewLand}>
@@ -49,21 +56,23 @@ function MyLand() {
                     </Card.Header>
                     <Card.Body>
                       <Card.Title>The Land title here</Card.Title>
-                      <Card.Text className="medium-text">
+                      <div className="medium-text">
                         Cameroon, South-West, Tiko
                         <br />0 <strong>XAF</strong>
                         <br />
-                        <div className="land-icon-section">
+                      </div>
+                      <div className="land-icon-section">
                           <span className="edit-text" onClick={() => CreateLand('Edit Land')}>Edit</span>
                           <span className="del-text medium-text" onClick={deleteLand}>
                             Delete
                           </span>
                         </div>
-                      </Card.Text>
                     </Card.Body>
                   </Card>
                 </Col>
-              ))}
+                ))
+                : <p className="no-land">You do not have any land listings yet!</p>
+            }
             </Row>
           </div>
         </Col>
