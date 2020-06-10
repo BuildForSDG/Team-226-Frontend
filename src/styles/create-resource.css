@@ -3,6 +3,10 @@
   padding: 2% 5%;
 }
 
+.red {
+  color: #a00404;
+}
+
 .small-text {
   font-size: 10px;
 }
@@ -35,6 +39,16 @@
   color: #216353;
 }
 
+button.cancel-btn,
+button.cancel-btn:hover,
+button.cancel-btn:focus {
+  color: #216353;
+  background: #efefef;
+  border: 1px solid #dedcdc;
+  font-size: 10px;
+  min-width: 100px;
+}
+
 .dialog-component__footer button.cancel-btn,
 .dialog-component__footer button.cancel-btn:hover,
 .dialog-component__footer button.cancel-btn:focus {
@@ -43,6 +57,16 @@
   border: 1px solid #dedcdc;
   font-size: 10px;
   min-width: 100px;
+}
+
+.new-category {
+  margin-left: 10px;
+  font-size: 11px;
+  padding: 5px;
+}
+
+.new-category:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
