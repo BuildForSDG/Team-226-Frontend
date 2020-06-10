@@ -1,0 +1,147 @@
+.feed-container {
+  margin-top: 30px;
+}
+
+.main-container {
+  -moz-box-shadow: 0 5px 6px #ccc;
+  -webkit-box-shadow: 0 5px 6px #ccc;
+  box-shadow: 0 5px 6px #ccc;
+  padding: 20px;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.feed-title {
+  color: #216353;
+  margin-bottom: 15px;
+}
+
+.single-feed {
+  border: 1px solid #e9e9e9;
+  margin-bottom: 10px;
+}
+
+.single-trending {
+  padding: 7px;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 10px;
+}
+
+.grey {
+  color: #979797;
+}
+
+.trend-title {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.trend-description {
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 4;
+}
+
+.feed-profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.feed-top-section {
+  padding: 3px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.feed-bottom-section {
+  padding: 5px 10px;
+}
+
+.vertical-alignment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.feed-name {
+  margin-top: 5px;
+}
+
+.feed-user-section {
+  margin-right: 20px;
+}
+
+.single-feed-title {
+  margin-top: 10px;
+}
+
+.single-feed iframe {
+  margin-bottom: 0;
+}
+
+.comment-input {
+  border-radius: calc(0.75em + 0.25rem + 1px);
+}
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+  .feed-user-section {
+    width: 45%;
+    margin-right: 10px;
+  }
+
+  .feed-profile {
+    margin-right: 7px;
+  }
+}
+
+@media only screen and (max-width: 505px) {
+  .feed-user-section {
+    width: 40%;
+    margin-right: 7px;
+  }
+
+  .feed-profile {
+    margin-right: 5px;
+  }
+
+  .single-feed-title {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .feed-user-section {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .feed-user-section {
+    width: 80%;
+  }
+
+  .feed-user-section p {
+    font-size: 10px;
+  }
+
+  .feed-user-section .small-text {
+    font-size: 8px;
+  }
+
+  .feed-profile {
+    margin-right: 3px;
+  }
+}
