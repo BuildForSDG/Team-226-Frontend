@@ -31,7 +31,7 @@ const create = async (data) => {
         title: 'Land Created',
         message: 'You successfully created a new land Listing',
         resolveLabel: 'Done'
-      }).then(() => navigate('/my-lands'));
+      });
     } else {
       notificationService.showWarning({
         title: 'Error occured',

@@ -6,12 +6,44 @@ import Card from 'react-bootstrap/Card';
 
 import notificationService from '../core/services/notification';
 import LoggedHeader from '../components/dashboard/logged-header';
+import httpLoader from '../core/services/http-loader';
+
 import Sidebar from '../components/dashboard/sidebar';
 import ViewLand from '../components/view-land/view-land';
 import CreateLand from '../components/create-land/create-land';
 import landService from '../core/services/land-service';
 
 import '../styles/my-land.css';
+
+const deleteMyLand = async (landId) => {
+  try {
+    const { response } = await httpLoader
+      .onLoad(
+        landService.deleteLand(landId),
+        {
+          400: () => notificationService.showWarning({
+            title: 'Error',
+            message: 'There is no land listing with this title available.',
+            rejectLabel: 'close'
+          })
+        }
+      );
+    if (response === undefined) {
+      notificationService.showSuccess({
+        title: 'Land Deleted',
+        message: 'You successfully deleted a land listing',
+        resolveLabel: 'Done'
+      });
+    } else {
+      notificationService.showWarning({
+        title: 'Error occured',
+        message: 'There was an error deleting this land listing. Please try again',
+        resolveLabel: 'close'
+      });
+    }
+    return response;
+  } catch (e) { return e; }
+};
 
 function MyLand() {
   const [lands, setLands] = useState([]);
@@ -23,7 +55,7 @@ function MyLand() {
         resolveLabel: 'Delete',
         rejectLabel: 'Cancel'
       })
-      .then(() => landService.deleteLand(landId));
+      .then(() => deleteMyLand(landId));
   };
 
   useEffect(() => {
