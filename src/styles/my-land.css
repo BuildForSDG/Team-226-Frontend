@@ -1,5 +1,6 @@
 .single-land {
   margin-bottom: 20px;
+  height: 200px;
 }
 
 .single-land .card .card-header {
@@ -26,4 +27,14 @@
 
 .no-land {
   margin: 10% auto;
+}
+
+.card-title::first-letter {
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-size: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

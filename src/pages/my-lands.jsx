@@ -3,8 +3,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import notificationService from '../core/services/notification';
 
+import notificationService from '../core/services/notification';
 import LoggedHeader from '../components/dashboard/logged-header';
 import Sidebar from '../components/dashboard/sidebar';
 import ViewLand from '../components/view-land/view-land';
@@ -15,8 +15,7 @@ import '../styles/my-land.css';
 
 function MyLand() {
   const [lands, setLands] = useState([]);
-  const test = [1, 2, 3, 4, 5, 6, 7, 8];
-  const deleteLand = () => {
+  const deleteLand = (landId) => {
     notificationService
       .showError({
         title: 'Delete Land',
@@ -24,14 +23,12 @@ function MyLand() {
         resolveLabel: 'Delete',
         rejectLabel: 'Cancel'
       })
-      // eslint-disable-next-line no-console
-      .then(() => console.log('Land deleted'));
+      .then(() => landService.deleteLand(landId));
   };
 
   useEffect(() => {
-    landService.getUserLands().then((data) => setLands(data));
+    landService.getUserLand().then((data) => setLands(data));
   }, []);
-  console.log(lands);
   return (
     <div>
       <LoggedHeader siteTitle="Farm Voice" />
@@ -49,21 +46,21 @@ function MyLand() {
             <Row>
               { lands.length > 0
                 ? lands.map((item) => (
-                <Col key={item} lg={4} sm={6} className="single-land">
+                <Col key={item.id + item.title} lg={4} sm={6} className="single-land">
                   <Card bg="light" text="dark">
                     <Card.Header onClick={ViewLand}>
-                      700 <sup>2</sup> m - <span className="medium-text">Rent</span>
+                      {item.size} <sup>2</sup> {item.size_unit_measurement} - <span className="medium-text">{item.for_type === 'FR' ? 'Free' : 'Rent'}</span>
                     </Card.Header>
                     <Card.Body>
-                      <Card.Title>The Land title here</Card.Title>
+                      <Card.Title>{item.title}</Card.Title>
                       <div className="medium-text">
-                        Cameroon, South-West, Tiko
-                        <br />0 <strong>XAF</strong>
+                        {item.location}
+                        <br />{item.for_type === 'FR' ? '0' : item.cost} <strong>{item.currency}</strong>
                         <br />
                       </div>
                       <div className="land-icon-section">
                           <span className="edit-text" onClick={() => CreateLand('Edit Land')}>Edit</span>
-                          <span className="del-text medium-text" onClick={deleteLand}>
+                          <span className="del-text medium-text" onClick={() => deleteLand(item.id)}>
                             Delete
                           </span>
                         </div>

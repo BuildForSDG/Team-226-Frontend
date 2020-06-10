@@ -1,7 +1,19 @@
-import api from './api';
+import httpServer from '../http-server';
 
-const getUserLands = async () => api.getUserLand();
+function getUserLand() {
+  return httpServer.get('resource/user/land/');
+}
+
+function createLand(data) {
+  return httpServer.post('/resource/land/', data);
+}
+
+function deleteLand(landId) {
+  return httpServer.delete(`/resource/land/${landId}`);
+}
 
 export default {
-  getUserLands
+  getUserLand,
+  createLand,
+  deleteLand
 };
