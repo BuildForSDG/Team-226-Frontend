@@ -31,6 +31,9 @@ const submit = async (data) => {
 };
 
 const Signin = () => {
+  if (currentUser.isLoggedIn()) {
+    navigate('/');
+  }
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {

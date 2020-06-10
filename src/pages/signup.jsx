@@ -11,6 +11,7 @@ import httpLoader from '../core/services/http-loader';
 import authenticationService from '../core/services/authentication-service';
 import { encodeToParams } from '../core/utils';
 import notificationService from '../core/services/notification';
+import currentUser from '../core/services/current-user';
 
 const submit = async (data) => {
   try {
@@ -44,6 +45,9 @@ const submit = async (data) => {
 };
 
 const Signup = () => {
+  if (currentUser.isLoggedIn()) {
+    navigate('/');
+  }
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
