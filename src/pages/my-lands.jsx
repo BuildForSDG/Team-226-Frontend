@@ -80,7 +80,7 @@ function MyLand() {
                 ? lands.map((item) => (
                 <Col key={item.id + item.title} lg={4} sm={6} className="single-land">
                   <Card bg="light" text="dark">
-                    <Card.Header onClick={ViewLand}>
+                    <Card.Header onClick={() => ViewLand(item)}>
                       {item.size} <sup>2</sup> {item.size_unit_measurement} - <span className="medium-text">{item.for_type === 'FR' ? 'Free' : 'Rent'}</span>
                     </Card.Header>
                     <Card.Body>

@@ -7,12 +7,17 @@ import DialogWrapper from '../../core/services/dialog/DialogWrapper.jsx';
 import Modal from '../../core/services/dialog';
 import '../../styles/view-land.css';
 
-const ViewLand = () => {
+const formatDate = (input) => {
+  const date = new Date(input);
+  return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+};
+
+const ViewLand = (land) => {
   Modal.show(({ hide, cancel }) => (
     <DialogWrapper
       header={
         <span className="resource-modal-title">
-          Some Land title here <Badge variant="success">For Rent</Badge>
+          {land.title} <Badge variant="success">{land.for_type === 'FR' ? 'Free' : 'Rent'}</Badge>
         </span>
       }
       footer={
@@ -27,19 +32,25 @@ const ViewLand = () => {
         <Card className="land-modal-body">
           <Card.Body>
             <p>
-              <strong>Size: </strong> 700 <sup>2</sup> m
+              <strong>Size: </strong> {land.size} <sup>2</sup> {land.size_unit_measurement}
             </p>
             <p>
-              <strong>Cost: </strong> 0 XAF
+              <strong>Cost: </strong> {land.cost} {land.currency}
             </p>
             <p>
-              <strong>Location: </strong> Cameroon, South-West - Tiko
+              <strong>Location: </strong> {land.location}
             </p>
             <p>
-              <strong>Lease rate: </strong> Per month
+              <strong>Lease rate: </strong> Per {land.lease_rate_periodicity}
             </p>
             <p>
-              <strong>Visibility: </strong> Private
+              <strong>Visibility: </strong> {land.visibility}
+            </p>
+            <p>
+              <strong>Date Created: </strong> {formatDate(land.date_created)}
+            </p>
+            <p>
+              <strong>Lastly Updated: </strong> {formatDate(land.date_updated)}
             </p>
           </Card.Body>
         </Card>
