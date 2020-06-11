@@ -12,8 +12,13 @@ function deleteLand(landId) {
   return httpServer.delete(`/resource/land/${landId}`);
 }
 
+function editLand(landId, data) {
+  return httpServer.patch(`/resource/land/${landId}`, data);
+}
+
 export default {
   getUserLand,
   createLand,
-  deleteLand
+  deleteLand,
+  editLand
 };

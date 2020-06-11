@@ -43,7 +43,37 @@ const create = async (data) => {
   } catch (e) { return e; }
 };
 
-const CreateLand = (title) => {
+const edit = async (dataId, data) => {
+  try {
+    const { response } = await httpLoader
+      .onLoad(
+        landService.editLand(encodeToParams(dataId, data)),
+        {
+          400: () => notificationService.showWarning({
+            title: 'Error',
+            message: 'There is a land listing with this title.',
+            rejectLabel: 'close'
+          })
+        }
+      );
+    if (response === undefined) {
+      notificationService.showSuccess({
+        title: 'Land Created',
+        message: 'You successfully edited the land Listing',
+        resolveLabel: 'Done'
+      });
+    } else {
+      notificationService.showWarning({
+        title: 'Error occured',
+        message: 'There was an error editing the land listing. Please check your inputs and try again',
+        resolveLabel: 'close'
+      });
+    }
+    return response;
+  } catch (e) { return e; }
+};
+
+const CreateLand = (title, land) => {
   const handleSubmit = (event) => {
     const form = event.currentTarget;
 
@@ -51,7 +81,7 @@ const CreateLand = (title) => {
     event.stopPropagation();
 
     if (form.checkValidity()) {
-      create({
+      const landData = {
         title: form.formTitle.value,
         size: form.formSize.value,
         size_unit_measurement: form.formMeasurement.value,
@@ -61,7 +91,13 @@ const CreateLand = (title) => {
         for_type: form.formLandType.value,
         visiility: form.formVisibility.value,
         lease_rate_periodicity: form.formLease.value
-      });
+      };
+
+      if (land !== undefined) {
+        edit(land.id, landData);
+      } else {
+        create(landData);
+      }
     } else {
       notificationService.showError({
         title: 'Error occured',
@@ -84,18 +120,18 @@ const CreateLand = (title) => {
             <Form.Label>
               Title <span className="red">*</span>
             </Form.Label>
-            <Form.Control data-testid="titleInput" size="sm" required />
+            <Form.Control data-testid="titleInput" size="sm" required defaultValue={land !== undefined ? land.title : ''} />
           </Form.Group>
           <Form.Row>
             <Form.Group as={Col} controlId="formSize">
               <Form.Label>
                 Size <sup>2</sup> <span className="red">*</span>
               </Form.Label>
-              <Form.Control data-testid="sizeInput" type="number" size="sm" required />
+              <Form.Control data-testid="sizeInput" type="number" size="sm" defaultValue={land !== undefined ? land.size : 0} required />
             </Form.Group>
             <Form.Group as={Col} controlId="formMeasurement">
               <Form.Label>Measurement</Form.Label>
-              <Form.Control as="select" size="sm" data-testid="measurementInput">
+              <Form.Control as="select" size="sm" data-testid="measurementInput" defaultValue={land !== undefined ? land.size_unit_measurement : ''}>
                 <option></option>
                 <option value="M">M</option>
                 <option value="KM">Km</option>
@@ -107,16 +143,16 @@ const CreateLand = (title) => {
             <Form.Label>
               Location <span className="red">*</span>
             </Form.Label>
-            <Form.Control data-testid="locationInput" size="sm" placeholder="Country / Region / state" required />
+            <Form.Control data-testid="locationInput" size="sm" placeholder="Country / Region / state" required defaultValue={land !== undefined ? land.location : ''} />
           </Form.Group>
           <Form.Row>
             <Form.Group as={Col} controlId="formPrice">
               <Form.Label>Price</Form.Label>
-              <Form.Control data-testid="priceInput" type="number" size="sm" />
+              <Form.Control data-testid="priceInput" type="number" size="sm" defaultValue={land !== undefined ? land.cost : 0} />
             </Form.Group>
             <Form.Group as={Col} controlId="formCurrency">
               <Form.Label>Currency</Form.Label>
-              <Form.Control as="select" size="sm" data-testid="currencyInput">
+              <Form.Control as="select" size="sm" data-testid="currencyInput" defaultValue={land !== undefined ? land.currency : ''}>
                 <option></option>
                 <option>XAF</option>
               </Form.Control>
@@ -124,7 +160,7 @@ const CreateLand = (title) => {
           </Form.Row>
           <Form.Group controlId="formLandType">
             <Form.Label>Land Type</Form.Label>
-            <Form.Control as="select" size="sm" data-testid="landType">
+            <Form.Control as="select" size="sm" data-testid="landType" defaultValue={land !== undefined ? land.for_type : ''}>
               <option></option>
               <option value="FR">For Free</option>
               <option value="LE">For Rent</option>
@@ -132,7 +168,7 @@ const CreateLand = (title) => {
           </Form.Group>
           <Form.Group controlId="formVisibility">
             <Form.Label>Visibility</Form.Label>
-            <Form.Control as="select" size="sm" data-testid="visibilityInput">
+            <Form.Control as="select" size="sm" data-testid="visibilityInput" defaultValue={land !== undefined ? land.visibility : ''}>
               <option></option>
               <option value="PU">Everyone</option>
               <option value="PR">Registered Users</option>
@@ -140,7 +176,7 @@ const CreateLand = (title) => {
           </Form.Group>
           <Form.Group controlId="formLease">
             <Form.Label>Lease rate</Form.Label>
-            <Form.Control as="select" size="sm" data-testid="leaseInput">
+            <Form.Control as="select" size="sm" data-testid="leaseInput" defaultValue={land !== undefined ? land.lease_rate_periodicity : ''}>
               <option></option>
               <option value="h">Hour</option>
               <option value="d">Day</option>

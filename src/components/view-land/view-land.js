@@ -12,6 +12,29 @@ const formatDate = (input) => {
   return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 };
 
+const formatVisibility = (visible) => (visible === 'PU' ? 'Public' : 'Private');
+
+const formatLease = (lease) => {
+  let result;
+  if (lease === 'd') {
+    result = 'Per day';
+  } if (lease === 'w') {
+    result = 'Per week';
+  } if (lease === 'h') {
+    result = 'Per hour';
+  }
+  if (lease === 'm') {
+    result = 'Per month';
+  }
+  if (lease === 'y') {
+    result = 'Per year';
+  }
+  if (lease === '') {
+    result = 'Not specified';
+  }
+  return result;
+};
+
 const ViewLand = (land) => {
   Modal.show(({ hide, cancel }) => (
     <DialogWrapper
@@ -41,10 +64,10 @@ const ViewLand = (land) => {
               <strong>Location: </strong> {land.location}
             </p>
             <p>
-              <strong>Lease rate: </strong> Per {land.lease_rate_periodicity}
+              <strong>Lease rate: </strong> {formatLease(land.lease_rate_periodicity)}
             </p>
             <p>
-              <strong>Visibility: </strong> {land.visibility}
+              <strong>Visibility: </strong> {formatVisibility(land.visibility)}
             </p>
             <p>
               <strong>Date Created: </strong> {formatDate(land.date_created)}

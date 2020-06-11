@@ -91,7 +91,7 @@ function MyLand() {
                         <br />
                       </div>
                       <div className="land-icon-section">
-                          <span className="edit-text" onClick={() => CreateLand('Edit Land')}>Edit</span>
+                          <span className="edit-text" onClick={() => CreateLand('Edit Land', item)}>Edit</span>
                           <span className="del-text medium-text" onClick={() => deleteLand(item.id)}>
                             Delete
                           </span>
