@@ -14,7 +14,7 @@ import Modal from '../../core/services/dialog';
 import '../../styles/create-resource.css';
 
 const create = async (data) => {
-  const { response } = await httpLoader
+  const response = await httpLoader
     .onLoad(
       landService.createLand(encodeToParams(data)),
       {
@@ -41,7 +41,7 @@ const create = async (data) => {
 };
 
 const edit = async (dataId, data) => {
-  const { response } = await httpLoader
+  const response = await httpLoader
     .onLoad(
       landService.editLand(dataId, encodeToParams(data)),
       {

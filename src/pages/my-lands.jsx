@@ -17,7 +17,7 @@ import landService from '../core/services/land-service';
 import '../styles/my-land.css';
 
 const deleteMyLand = async (landId) => {
-  const { response } = await httpLoader.onLoad(landService.deleteLand(landId), {
+  const response = await httpLoader.onLoad(landService.deleteLand(landId), {
     400: () => notificationService.showWarning({
       title: 'Error',
       message: 'There is no land listing with this title available.',
