@@ -47,7 +47,7 @@ const edit = async (dataId, data) => {
   try {
     const { response } = await httpLoader
       .onLoad(
-        landService.editLand(encodeToParams(dataId, data)),
+        landService.editLand(dataId, encodeToParams(data)),
         {
           400: () => notificationService.showWarning({
             title: 'Error',

@@ -9,11 +9,11 @@ function createLand(data) {
 }
 
 function deleteLand(landId) {
-  return httpServer.delete(`/resource/land/${landId}`);
+  return httpServer.delete(`/resource/land/${landId}/`);
 }
 
 function editLand(landId, data) {
-  return httpServer.patch(`/resource/land/${landId}`, data);
+  return httpServer.put(`/resource/land/${landId}/`, data);
 }
 
 export default {
