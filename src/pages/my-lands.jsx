@@ -37,7 +37,6 @@ const deleteMyLand = async (landId) => {
       resolveLabel: 'close'
     });
   }
-  return true;
 };
 
 function MyLand() {

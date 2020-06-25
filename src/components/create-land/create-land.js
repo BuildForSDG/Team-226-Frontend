@@ -14,63 +14,57 @@ import Modal from '../../core/services/dialog';
 import '../../styles/create-resource.css';
 
 const create = async (data) => {
-  try {
-    const { response } = await httpLoader
-      .onLoad(
-        landService.createLand(encodeToParams(data)),
-        {
-          400: () => notificationService.showWarning({
-            title: 'Error',
-            message: 'There is a land listing with this title. Please verify the title and try again.',
-            rejectLabel: 'close'
-          })
-        }
-      );
-    if (response === undefined) {
-      notificationService.showSuccess({
-        title: 'Land Created',
-        message: 'You successfully created a new land Listing',
-        resolveLabel: 'Refresh'
-      }).then(() => window.location.reload());
-    } else {
-      notificationService.showWarning({
-        title: 'Error occured',
-        message: 'There was an error creating a new land listing. Please check your inputs and try again',
-        resolveLabel: 'close'
-      });
-    }
-    return true;
-  } catch (e) { return e; }
+  const { response } = await httpLoader
+    .onLoad(
+      landService.createLand(encodeToParams(data)),
+      {
+        400: () => notificationService.showWarning({
+          title: 'Error',
+          message: 'There is a land listing with this title. Please verify the title and try again.',
+          rejectLabel: 'close'
+        })
+      }
+    );
+  if (response === undefined) {
+    notificationService.showSuccess({
+      title: 'Land Created',
+      message: 'You successfully created a new land Listing',
+      resolveLabel: 'Refresh'
+    }).then(() => window.location.reload());
+  } else {
+    notificationService.showWarning({
+      title: 'Error occured',
+      message: 'There was an error creating a new land listing. Please check your inputs and try again',
+      resolveLabel: 'close'
+    });
+  }
 };
 
 const edit = async (dataId, data) => {
-  try {
-    const { response } = await httpLoader
-      .onLoad(
-        landService.editLand(dataId, encodeToParams(data)),
-        {
-          400: () => notificationService.showWarning({
-            title: 'Error',
-            message: 'There is a land listing with this title.',
-            rejectLabel: 'close'
-          })
-        }
-      );
-    if (response === undefined) {
-      notificationService.showSuccess({
-        title: 'Land Edited',
-        message: 'You successfully edited the land Listing',
-        resolveLabel: 'Refresh'
-      }).then(() => window.location.reload());
-    } else {
-      notificationService.showWarning({
-        title: 'Error occured',
-        message: 'There was an error editing the land listing. Please check your inputs and try again',
-        resolveLabel: 'close'
-      });
-    }
-    return response;
-  } catch (e) { return e; }
+  const { response } = await httpLoader
+    .onLoad(
+      landService.editLand(dataId, encodeToParams(data)),
+      {
+        400: () => notificationService.showWarning({
+          title: 'Error',
+          message: 'There is a land listing with this title.',
+          rejectLabel: 'close'
+        })
+      }
+    );
+  if (response === undefined) {
+    notificationService.showSuccess({
+      title: 'Land Edited',
+      message: 'You successfully edited the land Listing',
+      resolveLabel: 'Refresh'
+    }).then(() => window.location.reload());
+  } else {
+    notificationService.showWarning({
+      title: 'Error occured',
+      message: 'There was an error editing the land listing. Please check your inputs and try again',
+      resolveLabel: 'close'
+    });
+  }
 };
 
 const CreateLand = (title, land) => {
