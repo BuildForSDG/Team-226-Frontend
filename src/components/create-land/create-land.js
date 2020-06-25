@@ -30,8 +30,8 @@ const create = async (data) => {
       notificationService.showSuccess({
         title: 'Land Created',
         message: 'You successfully created a new land Listing',
-        resolveLabel: 'Done'
-      });
+        resolveLabel: 'Refresh'
+      }).then(() => window.location.reload());
     } else {
       notificationService.showWarning({
         title: 'Error occured',
@@ -39,7 +39,7 @@ const create = async (data) => {
         resolveLabel: 'close'
       });
     }
-    return response;
+    return true;
   } catch (e) { return e; }
 };
 
@@ -58,10 +58,10 @@ const edit = async (dataId, data) => {
       );
     if (response === undefined) {
       notificationService.showSuccess({
-        title: 'Land Created',
+        title: 'Land Edited',
         message: 'You successfully edited the land Listing',
-        resolveLabel: 'Done'
-      });
+        resolveLabel: 'Refresh'
+      }).then(() => window.location.reload());
     } else {
       notificationService.showWarning({
         title: 'Error occured',

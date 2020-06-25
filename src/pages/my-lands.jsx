@@ -29,8 +29,8 @@ const deleteMyLand = async (landId) => {
       notificationService.showSuccess({
         title: 'Land Deleted',
         message: 'You successfully deleted a land listing',
-        resolveLabel: 'Done'
-      });
+        resolveLabel: 'Refresh'
+      }).then(() => window.location.reload());
     } else {
       notificationService.showWarning({
         title: 'Error occured',
@@ -38,7 +38,7 @@ const deleteMyLand = async (landId) => {
         resolveLabel: 'close'
       });
     }
-    return response;
+    return true;
   } catch (e) {
     return e;
   }
@@ -58,29 +58,18 @@ function MyLand() {
   };
 
   useEffect(() => {
-    // landService.getUserLand().then((data) => setLands(data));
     async function getLands() {
       try {
-        const { response } = await httpLoader.onLoad(landService.getUserLand(), {
-          401: () => notificationService.showWarning({
-            title: 'Error',
-            message: 'Your session has expired, please login to continue!',
-            resolveLabel: 'Login'
-          }).then(() => navigate('sign-in'))
-        });
-        console.log(response);
-
-        if (response === undefined) {
-          console.log(response);
-          // setLands(data)
-        } else {
-          notificationService.showWarning({
-            title: 'Error occured',
-            message: 'There was an error deleting this land listing. Please try again',
-            resolveLabel: 'close'
-          });
-        }
-        return response;
+        await httpLoader.onLoad(
+          () => landService.getUserLand().then((data) => setLands(data)), {
+            401: () => notificationService.showWarning({
+              title: 'Error',
+              message: 'Your session has expired, please login to continue!',
+              resolveLabel: 'Login'
+            }).then(() => navigate('sign-in'))
+          }
+        );
+        return true;
       } catch (e) {
         return e;
       }
