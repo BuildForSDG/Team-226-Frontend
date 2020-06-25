@@ -17,31 +17,27 @@ import landService from '../core/services/land-service';
 import '../styles/my-land.css';
 
 const deleteMyLand = async (landId) => {
-  try {
-    const { response } = await httpLoader.onLoad(landService.deleteLand(landId), {
-      400: () => notificationService.showWarning({
-        title: 'Error',
-        message: 'There is no land listing with this title available.',
-        rejectLabel: 'close'
-      })
+  const { response } = await httpLoader.onLoad(landService.deleteLand(landId), {
+    400: () => notificationService.showWarning({
+      title: 'Error',
+      message: 'There is no land listing with this title available.',
+      rejectLabel: 'close'
+    })
+  });
+  if (response === undefined) {
+    notificationService.showSuccess({
+      title: 'Land Deleted',
+      message: 'You successfully deleted a land listing',
+      resolveLabel: 'Refresh'
+    }).then(() => window.location.reload());
+  } else {
+    notificationService.showWarning({
+      title: 'Error occured',
+      message: 'There was an error deleting this land listing. Please try again',
+      resolveLabel: 'close'
     });
-    if (response === undefined) {
-      notificationService.showSuccess({
-        title: 'Land Deleted',
-        message: 'You successfully deleted a land listing',
-        resolveLabel: 'Refresh'
-      }).then(() => window.location.reload());
-    } else {
-      notificationService.showWarning({
-        title: 'Error occured',
-        message: 'There was an error deleting this land listing. Please try again',
-        resolveLabel: 'close'
-      });
-    }
-    return true;
-  } catch (e) {
-    return e;
   }
+  return true;
 };
 
 function MyLand() {
